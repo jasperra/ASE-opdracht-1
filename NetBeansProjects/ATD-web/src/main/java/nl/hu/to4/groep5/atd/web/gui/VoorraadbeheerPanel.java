@@ -11,7 +11,7 @@ import javafx.event.EventHandler;
 import javafx.geometry.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
-import DomeinKlassen.*;
+import nl.hu.to4.groep5.atd.web.domain.*;
 
 public class VoorraadbeheerPanel extends MyPanel implements EventHandler<ActionEvent>{
 	

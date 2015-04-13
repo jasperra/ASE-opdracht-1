@@ -6,7 +6,7 @@
 
 
 package nl.hu.to4.groep5.atd.web.gui;
-import DomeinKlassen.*;
+import nl.hu.to4.groep5.atd.web.domain.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;

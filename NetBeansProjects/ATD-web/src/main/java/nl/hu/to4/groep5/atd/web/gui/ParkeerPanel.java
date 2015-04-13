@@ -2,8 +2,8 @@
 package nl.hu.to4.groep5.atd.web.gui;
 import java.io.Serializable;
 import java.util.ArrayList;
- 
-import DomeinKlassen.*;
+
+import nl.hu.to4.groep5.atd.web.domain.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

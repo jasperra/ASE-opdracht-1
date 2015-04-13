@@ -16,8 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-import DomeinKlassen.Bedrijf;
-import DomeinKlassen.Klant;
+import nl.hu.to4.groep5.atd.web.domain.*;
 
 public class KlantenPanel extends MyPanel {
 	private Bedrijf hetBedrijf;

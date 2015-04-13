@@ -16,7 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
 import javafx.stage.*;
-import DomeinKlassen.*;
+import nl.hu.to4.groep5.atd.web.domain.*;
 
 public class VoorraadWijzigPanel extends Stage{
 	

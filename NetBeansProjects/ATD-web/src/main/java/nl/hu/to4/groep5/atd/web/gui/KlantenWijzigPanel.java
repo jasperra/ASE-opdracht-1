@@ -22,8 +22,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import DomeinKlassen.Bedrijf;
-import DomeinKlassen.Klant;
+import nl.hu.to4.groep5.atd.web.domain.*;
 
 public class KlantenWijzigPanel extends Stage{
 	TextField naam;

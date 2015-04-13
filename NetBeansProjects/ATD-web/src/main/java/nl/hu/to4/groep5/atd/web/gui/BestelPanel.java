@@ -9,7 +9,7 @@ package nl.hu.to4.groep5.atd.web.gui;
 import javafx.geometry.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
-import DomeinKlassen.*;
+import nl.hu.to4.groep5.atd.web.domain.*;
 
 public class BestelPanel extends MyPanel {
 	

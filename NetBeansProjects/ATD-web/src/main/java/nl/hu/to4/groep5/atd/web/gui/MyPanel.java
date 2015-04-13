@@ -10,7 +10,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.*;
-import DomeinKlassen.*;
+import nl.hu.to4.groep5.atd.web.domain.*;
 
 public abstract class MyPanel extends BorderPane {
 	
