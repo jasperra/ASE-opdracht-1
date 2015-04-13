@@ -1,0 +1,24 @@
+package nl.hu.to4.groep5.atd.web.domain;
+
+/*
+ * Gemaakt door: Tristan en Roger
+ */
+
+
+
+
+
+public class Monteur {
+
+	private int ID;
+	private String naam;
+	
+	public Monteur(String nm,int id){
+		naam = nm;
+		ID = id;
+	}
+	
+	public String getNaam(){
+		return naam;
+	}
+}
