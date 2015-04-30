@@ -35,18 +35,16 @@
                 </div>
                 <div id = "inputbox">
                     <h1>Registreren</h1>
-                    Username:<input placeholder="Username" class = "ltf" type = "text" name = "username" required/><br />
-                    Real name:<input placeholder="Real name" class = "ltf" type = "text" name = "rname" required/><br />
-                    Password:<input placeholder="Password" class = "ltf" type = "password" name = "password" required/><br />
-                    Retype Password:<input placeholder="Retype Password" class = "ltf" type = "password" name = "password2" required/><br />
-                    Email:<input placeholder="Email" class = "ltf" type = "text" name = "email" required/><br />
-                    Retype Email:<input placeholder="Retype Email" class = "ltf" type = "text" name = "email2" required/><br />
-                    Adres:<input placeholder="Adres" class = "ltf" type = "text" name = "adres" required/><br />
-                    Country:<select name ="country">
-                        <option value ="" selected>Please select Country</option>
-                        <option value ="Nederland">Nederland</option>
-                        <option value ="Belgie">Belgie</option>
-                    </select><br/>
+                    <input placeholder="Gebruikersnaam" type="text" name="username" required/><br />
+                    <input placeholder="Naam" type="text" name="rname" required/><br />
+                    <input placeholder="Wachtwoord" type="password" name="password" required/><br />
+                    <input placeholder="Retype Wachtwoord" type="password" name="password2" required/><br />
+                    <input placeholder="Emailadres" type="text" name="email" required/><br />
+                    <input placeholder="Retype Emailadres" type="text" name="email2" required/><br />
+                    <input placeholder="Telefoon-nummer" type="text" name="telnr" required/><br />
+                    <input placeholder="Postcode" type="text" name="postcode" required/><br />
+                    <input placeholder="Plaats" type="text" name="plaats" required/><br />
+                    <input type="checkbox" name="wiltHer" required/><br />
                     <input id = "submit" type = "submit" name = "knop" value = "Register!" />
                 </div>
             </form>

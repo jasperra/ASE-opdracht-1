@@ -11,14 +11,14 @@ package nl.hu.to4.groep5.atd.web.domain;
 
 public class Klant {
 	private boolean WiltHerinnering;
-	private String naam, adres, geboortedatum, telefoonnummer, postcode,emailadres;
+	private String naam, wachtwoord, telefoonnummer, postcode, plaats, emailadres;
 	
-	public Klant(String nm, String ad, String gd, String tel,String pc, String email, boolean wh){
+	public Klant(String nm, String ww, String tel, String pc, String pl, String email, boolean wh){
         naam = nm;
-        adres = ad;
-        geboortedatum = gd;
+        wachtwoord = ww;
         telefoonnummer = tel;
         postcode = pc;
+        plaats = pl;
         emailadres = email;
         WiltHerinnering = wh;
         
@@ -39,6 +39,14 @@ public class Klant {
 	public void setPostcode(String pc) {
 		postcode = pc;
 	}
+        
+        public String getWachtwoord() {
+            return wachtwoord;
+        }
+        
+        public void setWachtwoord(String ww) {
+            wachtwoord = ww;
+        }
 
 	public String getTelefoonnummer() {
 		return telefoonnummer;
@@ -48,21 +56,6 @@ public class Klant {
 		telefoonnummer = tel;
 	}
 
-	public String getGeboortedatum() {
-		return geboortedatum;
-	}
-
-	public void setGeboortedatum(String gd) {
-		geboortedatum = gd;
-	}
-
-	public String getAdres() {
-		return adres;
-	}
-
-	public void setAdres(String ad) {
-		adres = ad;
-	}
 	public String getNaam() {
 		return naam;
 	}
