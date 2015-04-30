@@ -8,10 +8,13 @@
     </head>
 <body>
     <div id="container">
-    <ul>
-        <li><div>Voorraad beheer</div></li>
-        <li><div>Agenda</div></li>
-        <li><div>Facturen</div></li>
-        <li><div>Klanten</div></li>
-        <li><div>Parkeren</div></li>
-    </ul>
+        <div id="menu">
+            <ul>
+                <li><div>Voorraad beheer</div></li>
+                <li><div>Agenda</div></li>
+                <li><div>Facturen</div></li>
+                <li><div>Klanten</div></li>
+                <li><div>Parkeren</div></li>
+                <li><div>Inloggen</div></li>
+            </ul>
+        </div>

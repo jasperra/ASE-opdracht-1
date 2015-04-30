@@ -61,3 +61,12 @@ ul li:hover ul {
 ul li ul li:hover { 
     background: #666; 
 }
+
+#container {
+    margin: 0 auto;
+    width: 50%;
+}
+
+#menu {
+    
+}
