@@ -1,7 +1,11 @@
+body {
+    background: url(../img/Background.png);
+}
+
 ul{
     display: inline;
     margin: 0;
-    padding: 15px 0px 15px 0px;
+    padding: 15px 0px 0px 0px;
     list-style: none;
 }
 
@@ -13,7 +17,7 @@ ul li{
     margin-right: -4px;
     padding: 15px 20px;
     background-color: #FFFFFF;
-    cursor: pointer;
+    cursor:url('../img/xp-middle-finger-2.cur'), default;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     -ms-transition: all 0.2s;
@@ -49,7 +53,7 @@ ul li ul li {
 
 ul li:hover{
     background-color: #555555;
-    color: #FFFFFF
+    color: #FFFFFF;
 }
 
 ul li:hover ul {
@@ -65,8 +69,12 @@ ul li ul li:hover {
 #container {
     margin: 0 auto;
     width: 50%;
+    height: 100%;
+    background: white;
 }
 
 #menu {
-    
+    margin-right: -15px;
+    width: 650px;
+    border: solid 1px black;
 }
