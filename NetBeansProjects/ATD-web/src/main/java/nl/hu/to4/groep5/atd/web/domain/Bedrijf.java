@@ -142,6 +142,32 @@ public class Bedrijf {
 		return alleAutos;
 	}
 	
+        public void setAlleKlanten(ArrayList<Klant> k){
+            alleKlanten = k;
+        }
+        
+        public void setAlleArtikelen(ArrayList<Artikel> k){
+            alleArtikelen = k;
+        }
+        
+        public void setAlleFacturen(ArrayList<Factuur> k){
+            alleFacturen = k;
+        }
+        
+        public void setAlleDiensten(ArrayList<Dienst> k){
+            alleDiensten = k;
+        }
+        
+        public void setAlleMonteurs(ArrayList<Monteur> m){
+            alleMonteurs = m;
+        }
+        
+        public void setAlleAutos(ArrayList<Auto> a){
+            alleAutos = a;
+        }      
+        
+        
+        
 	public String toString() {
 		String s = "Bedrijf " + naam + " heeft " +
 		aantalKlanten() + " klanten\n";
