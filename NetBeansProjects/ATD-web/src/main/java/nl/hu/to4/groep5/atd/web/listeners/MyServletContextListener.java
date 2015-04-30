@@ -20,8 +20,8 @@ public class MyServletContextListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         ServletContext sc = sce.getServletContext();
         Bedrijf b = new Bedrijf();
-        b.
-        ArrayList<User> allUsers = null;
+        
+        /*ArrayList<User> allUsers = null;
         try
         {
         FileInputStream fis = new FileInputStream("allUsers.obj");
@@ -38,7 +38,7 @@ public class MyServletContextListener implements ServletContextListener {
         } 
         catch (ClassNotFoundException ex) {   }
       
-        sc.setAttribute("allUsers", allUsers);
+        sc.setAttribute("allUsers", allUsers);*/
     }
     public void contextDestroyed(ServletContextEvent sce) {
         Object obj = sce.getServletContext().getAttribute("allUsers");
