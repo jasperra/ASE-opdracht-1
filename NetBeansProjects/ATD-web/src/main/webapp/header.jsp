@@ -3,6 +3,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+        <link href ="css/Stylesheet.css" rel="stylesheet" type="text/css" />
         <title>ATD web</title>
     </head>
+<body>
+    <div id="container">
+    <ul>
+        <li><div>Voorraad beheer</div></li>
+        <li><div>Agenda</div></li>
+        <li><div>Facturen</div></li>
+        <li><div>Klanten</div></li>
+        <li><div>Parkeren</div></li>
+    </ul>

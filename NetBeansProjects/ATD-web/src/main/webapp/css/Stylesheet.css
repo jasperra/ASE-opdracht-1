@@ -1,10 +1,63 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 30-apr-2015, 12:33:38
-    Author     : Eigenaar
-*/
+ul{
+    display: inline;
+    margin: 0;
+    padding: 15px 0px 15px 0px;
+    list-style: none;
+}
 
+ul li{
+    font-weight: bold;
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    margin-right: -4px;
+    padding: 15px 20px;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+ul li ul {
+  padding: 0;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 150px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transiton: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -transition: opacity 0.2s;
+}
+
+ul li ul li { 
+  background: #555; 
+  display: block; 
+  color: #fff;
+  text-shadow: 0 -1px 0 #000;
+}
+
+ul li:hover{
+    background-color: #555555;
+    color: #FFFFFF
+}
+
+ul li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+ul li ul li:hover { 
+    background: #666; 
+}

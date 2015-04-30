@@ -1,6 +1,4 @@
-<%@page import"header.jsp" %>
-<body>
-        <h1>Hello World!</h1>
-        <div>roger is dik</div>
+<jsp:include page="header.jsp" />
+</div>
 </body>
 </html>
