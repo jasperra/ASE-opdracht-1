@@ -4,10 +4,6 @@ package nl.hu.to4.groep5.atd.web.domain;
  * Gemaakt door: Tristan en Roger
  */
 
-
-
-
-
 import java.util.*;
 
 public class Bedrijf {

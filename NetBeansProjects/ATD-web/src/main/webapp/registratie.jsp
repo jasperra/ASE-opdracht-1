@@ -35,11 +35,11 @@
                 </div>
                 <div id = "inputbox">
                     <h1>Registreren</h1>
-                    Username:<input  class = "ltf" type = "text" name = "username" /><br />
+                    öUsername:<input  class = "ltf" type = "text" name = "username" /><br />
                     Real name:<input class = "ltf" type = "text" name = "rname" /><br />
                     Password:<input class = "ltf" type = "password" name = "password" /><br />
                     Retype Password:<input class = "ltf" type = "password" name = "password2" /><br />
-             öö       Email:<input class = "ltf" type = "text" name = "email" /><br />
+                    Email:<input class = "ltf" type = "text" name = "email" /><br />
                     Retype Email:<input class = "ltf" type = "text" name = "email2" /><br />
                     Adres:<input class = "ltf" type = "text" name = "adres" /><br />
                     Country:<select name ="country">

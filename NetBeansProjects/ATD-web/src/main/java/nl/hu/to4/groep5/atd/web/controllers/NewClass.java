@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package nl.hu.to4groep5.atd.web.listeners;
+package nl.hu.to4.groep5.atd.web.controllers;
 
 /**
  *

@@ -1,4 +1,4 @@
-<jsp:include page="header.jsp" />
-</div>
-</body>
+            <jsp:include page="header.jsp" />
+        </div>
+    </body>
 </html>
