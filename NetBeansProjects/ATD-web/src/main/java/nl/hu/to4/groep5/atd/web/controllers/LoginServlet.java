@@ -4,12 +4,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import nl.hu.to4.groep5.atd.web.domain.Bedrijf;
 import nl.hu.to4.groep5.atd.web.domain.Klant;
 
+@WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
     
     public LoginServlet() {
@@ -23,7 +26,7 @@ public class LoginServlet extends HttpServlet {
         boolean remember = false;
         ArrayList<Klant> alleUsers = null;
         
-        RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("registratie.jsp");
         
         if(rememberMe != null){
             remember = true;
@@ -33,7 +36,8 @@ public class LoginServlet extends HttpServlet {
             Object obj = getServletContext().getAttribute("hetBedrijf");
             
             if(obj != null){
-                alleUsers = (ArrayList<Klant>) obj;
+                Bedrijf b = (Bedrijf) obj;
+                alleUsers = b.getAlleKlanten();
                 
                 for(Klant k: alleUsers){
                     if(k.getUsername().equals(username)){
@@ -47,11 +51,17 @@ public class LoginServlet extends HttpServlet {
                             }
                             
                             request.getSession().setAttribute("ingelogdeUser", k);
+                            rd = request.getRequestDispatcher("registratie.jsp");
+                        }
+                        else{
+                            rd = request.getRequestDispatcher("index.jsp");
                         }
                     }
                 }
             }
-            
+            else{
+                rd = request.getRequestDispatcher("indasdfasdex.jsp");
+            }
         }
         rd.forward(request, response);
     }
