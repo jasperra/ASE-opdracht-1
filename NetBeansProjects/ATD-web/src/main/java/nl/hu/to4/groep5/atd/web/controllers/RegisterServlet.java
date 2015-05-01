@@ -59,8 +59,7 @@ public class RegisterServlet extends HttpServlet {
         RequestDispatcher rd = null;
 
         if (registerSucces) {
-                      
-            //Klant aan list toevoegen??????
+            System.out.println("Succes, Started Registering");
             
             Klant k = new Klant(name,realname,pass,telnr,postcode,plaats,email, true);
             Object hetBedrijf = getServletContext().getAttribute("hetBedrijf");
@@ -68,6 +67,7 @@ public class RegisterServlet extends HttpServlet {
                 Bedrijf b = (Bedrijf)hetBedrijf;
                 b.voegKlantToe(k);
                 getServletContext().setAttribute("hetBedrijf",b);
+                System.out.println("Done Registering");
             }
             
             
