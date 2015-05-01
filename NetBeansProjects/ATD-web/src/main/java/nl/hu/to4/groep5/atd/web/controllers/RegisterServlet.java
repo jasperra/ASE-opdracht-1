@@ -28,7 +28,10 @@ public class RegisterServlet extends HttpServlet {
         String plaats = request.getParameter("plaats");
         String herinnering = request.getParameter("wiltHer");
         Boolean wiltHer = false;
-        if(herinnering.equals("on")){
+        if(herinnering == null){
+            wiltHer = false;
+        }
+        else if(herinnering.equals("on")){
             wiltHer = true;
         }
 
