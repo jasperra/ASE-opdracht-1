@@ -1,5 +1,15 @@
 body {
-    background: url(../img/Background.png);
+    background: url(../img/Background.png) no-repeat;
+}
+
+label {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+h1 {
+    font-weight: bold;
+    text-align: center;
 }
 
 ul{
@@ -15,9 +25,9 @@ ul li{
     display: inline-block;
     position: relative;
     margin-right: -4px;
-    padding: 15px 20px;
+    padding: 15px 10px;
     background-color: #FFFFFF;
-    cursor:url('../img/xp-middle-finger-2.cur'), default;
+    cursor: url('../img/xp-middle-finger-2.cur'), default;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     -ms-transition: all 0.2s;
@@ -73,8 +83,49 @@ ul li ul li:hover {
     background: white;
 }
 
+#inhoud {
+    height: 100%;
+    padding: 0px 15px 15px 15px;
+}
+
+#login {
+    display: inline-block;
+    border: solid 10px black;
+    float: right;
+    position: relative;
+}
+
+#loginBox {
+    border: solid 2px black;
+    border-width: 2px 1px 1px 2px;
+    border-radius: 2px;
+    padding-right: 29px;
+}
+
 #menu {
-    margin-right: -15px;
-    width: 650px;
+    margin-right: 15px;
+    width: 674px;
     border: solid 1px black;
 }
+
+.login{
+    border-radius: 25px;
+    display: block;
+    padding: 2px;
+    margin: 10px 0px 2px 0px;
+    //float: right;
+}
+
+.loginButton {
+    border-radius: 25px;
+}
+
+.RememberMe {
+    margin-top: 5px;
+}
+
+#button {
+   background: url('../img/Button chrome.png') no-repeat;
+}
+
+
