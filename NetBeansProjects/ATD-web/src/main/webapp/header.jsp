@@ -14,8 +14,14 @@
                 <li><div>Agenda</div></li>
                 <li><div>Facturen</div></li>
                 <li><div>Klanten</div></li>
-                <li><div>Parkeren</div></li>
-                <li><div>Inloggen Voor Noobs</div></li>
-            </ul>
+                <li><div>Parkeren</div></li></ul>
+                <div class="login">
+                        <form action="POST" >
+                            <input class="login" type="text" name="username" placeholder="Gebruikersnaam" value="" REQUIRED/>
+                            <input class="login" type="password" name="password" placeholder="Wachtwoord" value="" REQUIRED/>
+                            <label>remember me: </label><input class="RememberMe" type="checkbox" name="remember me" value="" />
+                            <input class="loginButton" type="submit" name="submit" value="inloggen" />
+                        </form></div>
+            
         </div>
         <div>ajsdf'ladsjf;kadslfkjads;lfkjapsdkjfads;fjkals</div>
