@@ -60,7 +60,12 @@ public class RegisterServlet extends HttpServlet {
             //Klant aan list toevoegen??????
             
             Klant k = new Klant(name,realname,pass,telnr,postcode,plaats,email, true);
-            
+            Object hetBedrijf = getServletContext().getAttribute("hetBedrijf");
+            if(hetBedrijf != null){
+                Bedrijf b = (Bedrijf)hetBedrijf;
+                b.voegKlantToe(k);
+                getServletContext().setAttribute("hetBedrijf",b);
+            }
             
             
             rd = request.getRequestDispatcher("index.jsp");

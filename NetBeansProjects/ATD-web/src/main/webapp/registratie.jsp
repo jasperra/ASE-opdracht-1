@@ -44,7 +44,7 @@
                     <input placeholder="Telefoon-nummer" type="text" name="telnr" required/><br />
                     <input placeholder="Postcode" type="text" name="postcode" required/><br />
                     <input placeholder="Plaats" type="text" name="plaats" required/><br />
-                    <input type="checkbox" name="wiltHer" required/><br />
+                    <input type="checkbox" name="wiltHer" /><br />
                     <input id = "submit" type = "submit" name = "knop" value = "Register!" />
                 </div>
             </form>

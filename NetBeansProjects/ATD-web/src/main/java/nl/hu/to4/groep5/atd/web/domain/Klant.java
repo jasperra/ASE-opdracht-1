@@ -6,11 +6,6 @@ import java.io.Serializable;
  * Gemaakt door: Thijs
  */
 
-
-
-
-
-
 public class Klant implements Serializable{
 	private boolean WiltHerinnering;
 	private String username, naam, wachtwoord, telefoonnummer, postcode, plaats, emailadres;
