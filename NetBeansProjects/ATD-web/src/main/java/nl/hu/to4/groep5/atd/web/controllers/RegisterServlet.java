@@ -59,7 +59,7 @@ public class RegisterServlet extends HttpServlet {
                       
             //Klant aan list toevoegen??????
             
-            Klant k = new Klant(name,pass,telnr,postcode,plaats,email, true);
+            Klant k = new Klant(name,realname,pass,telnr,postcode,plaats,email, true);
             
             
             

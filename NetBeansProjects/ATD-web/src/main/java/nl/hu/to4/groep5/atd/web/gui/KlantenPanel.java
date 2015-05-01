@@ -38,8 +38,8 @@ public class KlantenPanel extends MyPanel {
         label.setFont(new Font("Arial", 20));
         
         //Opmaak van de tabel
-        VBox vB = fillVbox();       
-        setCenter(vB);
+        //VBox vB = fillVbox();       
+        //setCenter(vB);
        
         HBox debuttons = new HBox(10);
         HBox bovenkant = new HBox(480);
@@ -57,10 +57,10 @@ public class KlantenPanel extends MyPanel {
         	}
         });
         //Ophalen van de gegevens uit de TextFields van KlantenToevoegPanel
-    	(kT).opslaan.setOnAction(new EventHandler <ActionEvent>(){
+    	/*(kT).opslaan.setOnAction(new EventHandler <ActionEvent>(){
 			public void handle (ActionEvent e){	
 				 
-				 Klant k = new Klant(
+				Klant k = new Klant(
 						(kT).naam.getText(),
 						(kT).adres.getText(),
 						(kT).geboortedatum.getText(),
@@ -86,7 +86,7 @@ public class KlantenPanel extends MyPanel {
          wijzigen.setOnAction(e -> {
          	//kW.showAndWait();
          	KlantenWijzigPanel kW = new KlantenWijzigPanel(ms, b, this);
-         }); 
+         }); */
     	debuttons.getChildren().addAll(wijzigen,toevoegen);
 	}
 	//Aanmaken van de "Tabellen"
@@ -144,4 +144,4 @@ public class KlantenPanel extends MyPanel {
 		VBox vB = fillVbox();
 		setCenter(vB);
 	}	
-}
+        }

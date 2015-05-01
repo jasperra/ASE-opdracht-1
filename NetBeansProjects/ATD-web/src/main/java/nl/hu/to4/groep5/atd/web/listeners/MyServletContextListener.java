@@ -1,6 +1,6 @@
 /*
  * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template file, choose Tools | Templates.
  * and open the template in the editor.
  */
 package nl.hu.to4.groep5.atd.web.listeners;
@@ -20,17 +20,20 @@ public class MyServletContextListener implements ServletContextListener {
         ServletContext sc = sce.getServletContext();
         Bedrijf b = null;
         
-        System.out.println("\n" + "\n" + "\n" + "STARTING  ADFSDASFLJADFS" + "\n" + "\n" + "\n");
-        
         try
         {
+            System.out.println("-");
+            System.out.println("-");
+            System.out.println("LAUNCHING --------------------------- IN DE TRY");
             File f = new File("/hetBedrijf.obj");
+            System.out.println("-");
+            System.out.println("-");
             System.out.println("-");
             System.out.println("-");
             System.out.println(f.getAbsoluteFile());
             System.out.println("-");
             System.out.println("-");
-            FileInputStream fis = new FileInputStream("/hetBedrijf.obj");
+            FileInputStream fis = new FileInputStream("//tempTest//hetBedrijf.obj");
             ObjectInputStream ois = new ObjectInputStream(fis);
             Object obj = ois.readObject();
             b = (Bedrijf) obj;
@@ -40,24 +43,39 @@ public class MyServletContextListener implements ServletContextListener {
             b = new Bedrijf();
             System.out.println("-");
             System.out.println("-");
-            System.out.println("IN DE CATCH");
+            System.out.println("LAUNCHING --------------------------- IN DE CATCH");
             System.out.println("-");
             System.out.println("-");
         } 
         catch (ClassNotFoundException cnfe) {   }
       
         sc.setAttribute("hetBedrijf", b);
-        
     }
     public void contextDestroyed(ServletContextEvent sce) {
         
+        System.out.println("-");
+        System.out.println("-");
+        System.out.println("In Destroy");
+        System.out.println("-");
+        System.out.println("-");
         Object hetBedrijf = sce.getServletContext().getAttribute("hetBedrijf");
         try {
-            FileOutputStream fos = new FileOutputStream("/hetBedrijf.obj");
+            System.out.println("-");
+            System.out.println("-");
+            System.out.println("IN DE TRY 2");
+            System.out.println("-");
+            System.out.println("-");
+            FileOutputStream fos = new FileOutputStream("//tempTest//hetBedrijf.obj");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(hetBedrijf);
             oos.close(); 
-        } catch (IOException ioe) {  }
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+            System.out.println("-");
+            System.out.println("-");
+            System.out.println("IN DE CATCH 2");
+            System.out.println("-");
+            System.out.println("-");
+        }
     }
-    
 }

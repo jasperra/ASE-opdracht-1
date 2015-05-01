@@ -11,9 +11,10 @@ package nl.hu.to4.groep5.atd.web.domain;
 
 public class Klant {
 	private boolean WiltHerinnering;
-	private String naam, wachtwoord, telefoonnummer, postcode, plaats, emailadres;
+	private String username, naam, wachtwoord, telefoonnummer, postcode, plaats, emailadres;
 	
-	public Klant(String nm, String ww, String tel, String pc, String pl, String email, boolean wh){
+	public Klant(String user,String nm, String ww, String tel, String pc, String pl, String email, boolean wh){
+        username = user;
         naam = nm;
         wachtwoord = ww;
         telefoonnummer = tel;
@@ -86,4 +87,18 @@ public class Klant {
 	public Klant getKlant(){
 		return this;
 	}
+
+    /**
+     * @return the username
+     */
+    public String getUsername() {
+        return username;
+    }
+
+    /**
+     * @param user the username to set
+     */
+    public void setUsername(String user) {
+        username = user;
+    }
 }
