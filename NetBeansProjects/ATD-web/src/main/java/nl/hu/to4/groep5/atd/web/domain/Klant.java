@@ -24,6 +24,10 @@ public class Klant {
         WiltHerinnering = wh;
         
 	}
+        
+        public boolean login (String password){
+           return this.wachtwoord.equals(password);
+        }
 
 	public String getEmailadres() {
 		return emailadres;
