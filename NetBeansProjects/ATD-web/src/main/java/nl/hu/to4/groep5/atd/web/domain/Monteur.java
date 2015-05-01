@@ -1,5 +1,7 @@
 package nl.hu.to4.groep5.atd.web.domain;
 
+import java.io.Serializable;
+
 /*
  * Gemaakt door: Tristan en Roger
  */
@@ -8,7 +10,7 @@ package nl.hu.to4.groep5.atd.web.domain;
 
 
 
-public class Monteur {
+public class Monteur implements Serializable{
 
 	private int ID;
 	private String naam;

@@ -1,5 +1,7 @@
 package nl.hu.to4.groep5.atd.web.domain;
 
+import java.io.Serializable;
+
 /*
  * Gemaakt door: Tristan en Roger
  */
@@ -9,7 +11,7 @@ package nl.hu.to4.groep5.atd.web.domain;
 
 
 
-public class TankDienst extends Dienst{
+public class TankDienst extends Dienst implements Serializable{
 	
 	private GebruikteArtikelen hetBrandstofType;
 	

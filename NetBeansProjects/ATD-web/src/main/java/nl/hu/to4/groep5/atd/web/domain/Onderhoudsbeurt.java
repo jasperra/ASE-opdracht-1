@@ -8,9 +8,10 @@ package nl.hu.to4.groep5.atd.web.domain;
 
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Onderhoudsbeurt extends Dienst {
+public class Onderhoudsbeurt extends Dienst implements Serializable{
 
 	private int aantalBestedeUur;
 	private Auto deAuto;

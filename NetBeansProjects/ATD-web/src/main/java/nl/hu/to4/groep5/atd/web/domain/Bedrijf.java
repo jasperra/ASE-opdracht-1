@@ -4,9 +4,10 @@ package nl.hu.to4.groep5.atd.web.domain;
  * Gemaakt door: Tristan en Roger
  */
 
+import java.io.*;
 import java.util.*;
 
-public class Bedrijf {
+public class Bedrijf implements Serializable{
 
 	private String naam;
 	private ArrayList<Klant> alleKlanten = new ArrayList<Klant>();

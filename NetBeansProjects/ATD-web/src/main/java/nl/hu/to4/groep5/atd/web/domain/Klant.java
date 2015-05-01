@@ -1,5 +1,7 @@
 package nl.hu.to4.groep5.atd.web.domain;
 
+import java.io.Serializable;
+
 /*
  * Gemaakt door: Thijs
  */
@@ -9,7 +11,7 @@ package nl.hu.to4.groep5.atd.web.domain;
 
 
 
-public class Klant {
+public class Klant implements Serializable{
 	private boolean WiltHerinnering;
 	private String username, naam, wachtwoord, telefoonnummer, postcode, plaats, emailadres;
 	

@@ -9,10 +9,11 @@ package nl.hu.to4.groep5.atd.web.domain;
 
 
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Factuur {
+public class Factuur implements Serializable{
 	
 	private int factuurNummer;
 	private double brutoPrijs;

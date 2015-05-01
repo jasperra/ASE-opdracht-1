@@ -1,9 +1,11 @@
 package nl.hu.to4.groep5.atd.web.domain;
 
+import java.io.Serializable;
+
 
 
  
-public class ParkeerPlaats {
+public class ParkeerPlaats implements Serializable{
     private int maxAantal = 25;
     private int aantalBezet = 0;
      

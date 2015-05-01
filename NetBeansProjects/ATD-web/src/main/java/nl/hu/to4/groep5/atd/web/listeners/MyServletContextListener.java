@@ -25,21 +25,16 @@ public class MyServletContextListener implements ServletContextListener {
             System.out.println("-");
             System.out.println("-");
             System.out.println("LAUNCHING --------------------------- IN DE TRY");
-            File f = new File("/hetBedrijf.obj");
             System.out.println("-");
             System.out.println("-");
-            System.out.println("-");
-            System.out.println("-");
-            System.out.println(f.getAbsoluteFile());
-            System.out.println("-");
-            System.out.println("-");
-            FileInputStream fis = new FileInputStream("//tempTest//hetBedrijf.obj");
+            FileInputStream fis = new FileInputStream("C:\\tempTest\\hetBedrijf.obj");
             ObjectInputStream ois = new ObjectInputStream(fis);
             Object obj = ois.readObject();
             b = (Bedrijf) obj;
             ois.close();
         }
         catch(IOException ioe){
+            ioe.printStackTrace();
             b = new Bedrijf();
             System.out.println("-");
             System.out.println("-");
@@ -65,7 +60,7 @@ public class MyServletContextListener implements ServletContextListener {
             System.out.println("IN DE TRY 2");
             System.out.println("-");
             System.out.println("-");
-            FileOutputStream fos = new FileOutputStream("//tempTest//hetBedrijf.obj");
+            FileOutputStream fos = new FileOutputStream("C:\\tempTest\\hetBedrijf.obj");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(hetBedrijf);
             oos.close(); 

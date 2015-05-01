@@ -1,5 +1,7 @@
 package nl.hu.to4.groep5.atd.web.domain;
 
+import java.io.Serializable;
+
 /*
  * Gemaakt door: Tristan en Roger
  */
@@ -9,7 +11,7 @@ package nl.hu.to4.groep5.atd.web.domain;
 
 
 
-public class Auto {
+public class Auto implements Serializable{
 	private String naam;
 	private String merk;
 	private Klant deEigenaar;

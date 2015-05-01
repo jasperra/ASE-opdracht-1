@@ -1,5 +1,7 @@
 package nl.hu.to4.groep5.atd.web.domain;
 
+import java.io.Serializable;
+
 /*
  * Gemaakt door: Tristan en Roger
  */
@@ -9,7 +11,7 @@ package nl.hu.to4.groep5.atd.web.domain;
 
 
 
-public class GebruikteArtikelen {
+public class GebruikteArtikelen implements Serializable{
 	//Hier staan de attributen
 	private int aantal; //Dit is een int getal, met de naam: aantal
 	private Artikel hetArtikel; //Dit is een Artikel Object, met de naam: hetArtikel
