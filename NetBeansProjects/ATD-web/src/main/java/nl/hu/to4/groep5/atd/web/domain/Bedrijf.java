@@ -53,10 +53,10 @@ public class Bedrijf implements Serializable{
 	
 
 	public void voegKlantToe(Klant nweKlant) {
-		if (!heeftKlant(nweKlant.getNaam())) {
-			alleKlanten.add(nweKlant);
-			System.out.println("toegevoegd");
-		}
+            if (!heeftKlant(nweKlant.getNaam())) {
+                alleKlanten.add(nweKlant);
+                System.out.println("toegevoegd");
+            }
 	}
 	
 	public boolean heeftKlant(String kN) {

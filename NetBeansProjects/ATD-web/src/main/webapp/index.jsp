@@ -5,6 +5,7 @@
             <span>heb jij je nog niet aangemeld voor deze awesome site dan moet je dat zeker 
                 hieronder op aanmelden klikken! meld je vandaag nog aan of betaal morgen nog minder.</span>
             <form action='registratie.jsp' method='post'><input id="button" type='submit' name='register' value='aanmelden' /></form>
-            </div></div>
+            </div>
+        </div>
     </body>
 </html>
