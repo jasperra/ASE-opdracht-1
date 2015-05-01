@@ -91,12 +91,12 @@ public class KlantenWijzigPanel extends Stage{
 					}
 					if (!adres.getText().equals("")){
 						String s = adres.getText();
-						tempK.setAdres(s); 	
+						//tempK.setAdres(s); 	
 											
 					}
 					if (!geboortedatum.getText().equals("")){
 						String s = geboortedatum.getText();
-						tempK.setGeboortedatum(s); 						
+						//tempK.setGeboortedatum(s); 						
 					}
 					if (!telefoonnummer.getText().equals("")){
 						String s = telefoonnummer.getText();

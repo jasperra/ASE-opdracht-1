@@ -5,4 +5,7 @@
             30
         </session-timeout>
     </session-config>
+    <listener>
+        <listener-class>nl.hu.to4.groep5.atd.web.listeners.MyServletContextListener</listener-class>
+    </listener>
 </web-app>

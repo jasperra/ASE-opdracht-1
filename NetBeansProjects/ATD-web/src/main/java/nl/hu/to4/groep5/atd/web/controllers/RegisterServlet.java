@@ -1,13 +1,10 @@
 package nl.hu.to4.groep5.atd.web.controllers;
 import nl.hu.to4.groep5.atd.web.domain.*;
 import java.io.*;
-import java.io.IOException;
-import java.util.ArrayList;
+import java.util.*;
 import javax.servlet.*;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.annotation.*;
+import javax.servlet.http.*;
 
 @WebServlet("/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
@@ -16,8 +13,7 @@ public class RegisterServlet extends HttpServlet {
 
     public RegisterServlet() { super(); }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException 
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
     {
         boolean registerSucces = false;
         
@@ -66,10 +62,11 @@ public class RegisterServlet extends HttpServlet {
             Klant k = new Klant(name,pass,telnr,postcode,plaats,email, true);
             
             
+            
             rd = request.getRequestDispatcher("index.jsp");
         }
         else {
-        rd = request.getRequestDispatcher("registerpage.jsp");
+        rd = request.getRequestDispatcher("registratie.jsp");
         }
         rd.forward(request, response);
     }

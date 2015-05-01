@@ -116,10 +116,10 @@ public class KlantenPanel extends MyPanel {
         	     klant = new HBox(7);
         	     Label l1 = new Label (k.getNaam());
         	     l1.setPrefWidth(95);
-        	     Label l2 = new Label (k.getAdres());
-        	     l2.setPrefWidth(120);
-        	     Label l3 = new Label (k.getGeboortedatum());
-        	     l3.setPrefWidth(90);
+        	     //Label l2 = new Label (k.getAdres());
+        	     //l2.setPrefWidth(120);
+        	     //Label l3 = new Label (k.getGeboortedatum());
+        	     //l3.setPrefWidth(90);
         	     Label l4 = new Label (k.getTelefoonnummer());
         	     l4.setPrefWidth(90);
         	     Label l5 = new Label (k.getPostcode());
@@ -128,7 +128,7 @@ public class KlantenPanel extends MyPanel {
         	     l6.setPrefWidth(160);
         	     Label l7 = new Label (k.wiltHerinnering());
         	     l7.setPrefWidth(100);
-        	     klant.getChildren().addAll(l1,l2,l3,l4,l5,l6,l7);
+        	     //klant.getChildren().addAll(l1,l2,l3,l4,l5,l6,l7);
         	     klant.setPadding(new Insets(10,0,0,0));
         	     vB.getChildren().add(klant);
         	     setCenter(vB);
