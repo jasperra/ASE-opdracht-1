@@ -1,5 +1,7 @@
 body {
-    background: url(../img/Background.png) no-repeat;
+    background-image: url(../img/Background.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 label {
@@ -77,8 +79,10 @@ ul li ul li:hover {
 }
 
 #container {
+    position: relative;
     margin: 0 auto;
-    width: 50%;
+    top:50px;
+    width: 60%;
     height: 100%;
     background: white;
 }
@@ -104,7 +108,7 @@ ul li ul li:hover {
 
 #menu {
     margin-right: 15px;
-    width: 674px;
+    width: 100%;
     border: solid 1px black;
 }
 
@@ -113,7 +117,7 @@ ul li ul li:hover {
     display: block;
     padding: 2px;
     margin: 10px 0px 2px 0px;
-    //float: right;
+    float: right;
 }
 
 .loginButton {
@@ -125,7 +129,8 @@ ul li ul li:hover {
 }
 
 #button {
-   background: url('../img/Button chrome.png') no-repeat;
+   background-image: url('../img/Button chrome.png');
+   background-repeat: no-repeat;
 }
 
 

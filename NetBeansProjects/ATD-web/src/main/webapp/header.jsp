@@ -26,19 +26,20 @@
                 <li><div><a>Agenda</a></div></li>
                 <li><div><a>Facturen</a></div></li>
                 <li><div><a>Klanten</a></div></li>
-                <li><div><a>Parkeren</a></div></li></ul>
-                <div class="login">
-                        <form action="LoginServlet" method="POST">
-                            <input class="login" type="text" name="username" placeholder="Gebruikersnaam" value="<% 
-                                if(myCookie != null){
-                                    out.println(myCookie.getValue());
-                                }
-                            %>" REQUIRED/>
-                            <input class="login" type="password" name="password" placeholder="Wachtwoord" value="" REQUIRED/>
-                            <label>remember me: </label><input class="RememberMe" type="checkbox" name="remember me" value="" />
-                            <input class="loginButton" type="submit" name="submit" value="inloggen" />
-                        </form></div>
-            
+                <li><div><a>Parkeren</a></div></li>
+            </ul>
+            <div class="login">
+                <form action="LoginServlet" method="POST">
+                    <input class="login" type="text" name="username" placeholder="Gebruikersnaam" value="<% 
+                        if(myCookie != null){
+                            out.println(myCookie.getValue());
+                        }
+                    %>" REQUIRED/>
+                    <input class="login" type="password" name="password" placeholder="Wachtwoord" value="" REQUIRED/>
+                    <label>remember me: </label><input class="RememberMe" type="checkbox" name="remember me" value="" />
+                    <input class="loginButton" type="submit" name="submit" value="inloggen" />
+                </form>
+            </div>
         </div>
         <div id="inhoud">
         
