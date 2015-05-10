@@ -1,5 +1,6 @@
         <%@page import="nl.hu.to4.groep5.atd.web.domain.*" %>
         <jsp:include page="header.jsp" />
+        <link href ="css/ProfileStylesheet.css" rel="stylesheet" type="text/css" />
         <%
             Klant k = (Klant)request.getAttribute("deUser");
             Klant u = (Klant)request.getSession().getAttribute("ingelogdeUser");
@@ -22,7 +23,7 @@
             }
         %>
         <h1>Je Profiel:</h1>
-        <form action="" method="POST">
+        <form id="profileForm" action="" method="POST">
             <table style="width: 100%;">
                 <tbody>
                     <tr>
@@ -56,8 +57,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                        </td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>Telefoon:</td>
@@ -66,8 +66,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                        </td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>
@@ -94,14 +93,11 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                        </td>
-                        <td>
-                        </td>
+                        <td></td>
+                        <td></td>
                     </tr>
                     <tr>
-                        <td>
-                        </td>
+                        <td></td>
                         <td>
                             <input type="submit" style="width:100%;" value="Opslaan" name="submit_register"></input>
                         </td>
