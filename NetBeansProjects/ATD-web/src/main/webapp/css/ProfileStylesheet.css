@@ -32,3 +32,27 @@ and open the template in the editor.
 	box-shadow:0 0 4px #000000;
         border-color: #bbb;
 }
+
+#profileForm input[type=submit]{
+	background-color:#0000bb;
+	border:none;
+        width: 100%;
+        max-width: 96%;
+	margin-bottom:5px;
+	color:#fff;
+	font-weight:700;
+	text-shadow:0 1px 2px #799a1d;
+	padding:3px 15px 5px;
+        cursor: url('../img/xp-middle-finger-2.cur'), default;
+	-webkit-transition:background-color .2s;
+	-moz-transition:background-color .2s;
+	-o-transition:background-color .2s;
+	-ms-transition:background-color .2s;
+	transition:background-color .2s;
+	-webkit-appearance:none
+}
+
+#profileForm input[type=submit]:hover{
+	background-color:#555;
+	text-shadow:0 0 0 #000
+}
