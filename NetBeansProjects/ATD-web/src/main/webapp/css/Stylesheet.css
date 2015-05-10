@@ -78,10 +78,17 @@ ul li ul li:hover {
     background: #666; 
 }
 
+#bannerContainer {
+    position: relative;
+    margin: 0 auto;
+    width: 60%;
+    height: 50px;
+    background: none;
+}
+
 #container {
     position: relative;
     margin: 0 auto;
-    top:50px;
     width: 60%;
     height: 100%;
     background: white;

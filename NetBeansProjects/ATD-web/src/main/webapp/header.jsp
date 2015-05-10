@@ -5,6 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href ="css/Stylesheet.css" rel="stylesheet" type="text/css" />
         <title>ATD web</title>
+        <%@page import="nl.hu.to4.groep5.atd.web.domain.*" %>
         <%
             Cookie cookies[] = request.getCookies();
             Cookie myCookie = null;
@@ -15,10 +16,11 @@
                         break;
                     }
                 }
-            } 
+            }
         %>
     </head>
 <body>
+    <a href="index.jsp"><div id="bannerContainer"></div></a>
     <div id="container">
         <div id="menu">
             <ul>

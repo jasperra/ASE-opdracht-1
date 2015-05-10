@@ -51,7 +51,7 @@ public class LoginServlet extends HttpServlet {
                             }
                             
                             request.getSession().setAttribute("ingelogdeUser", k);
-                            rd = request.getRequestDispatcher("registratie.jsp");
+                            rd = request.getRequestDispatcher("profiel.jsp");
                         }
                         else{
                             rd = request.getRequestDispatcher("index.jsp");
@@ -60,7 +60,7 @@ public class LoginServlet extends HttpServlet {
                 }
             }
             else{
-                rd = request.getRequestDispatcher("indasdfasdex.jsp");
+                rd = request.getRequestDispatcher("index.jsp");
             }
         }
         rd.forward(request, response);

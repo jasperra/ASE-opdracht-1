@@ -102,4 +102,18 @@ public class Klant implements Serializable{
     public void setUsername(String user) {
         username = user;
     }
+
+    /**
+     * @return the plaats
+     */
+    public String getPlaats() {
+        return plaats;
+    }
+
+    /**
+     * @param plaats the plaats to set
+     */
+    public void setPlaats(String plaats) {
+        this.plaats = plaats;
+    }
 }
