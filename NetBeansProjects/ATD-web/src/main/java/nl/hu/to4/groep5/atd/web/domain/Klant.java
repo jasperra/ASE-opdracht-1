@@ -111,9 +111,9 @@ public class Klant implements Serializable{
     }
 
     /**
-     * @param plaats the plaats to set
+     * @param p the plaats to set
      */
-    public void setPlaats(String plaats) {
-        this.plaats = plaats;
+    public void setPlaats(String p) {
+        plaats = p;
     }
 }

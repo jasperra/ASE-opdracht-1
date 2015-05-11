@@ -2,7 +2,6 @@
         <jsp:include page="header.jsp" />
         <link href ="css/ProfileStylesheet.css" rel="stylesheet" type="text/css" />
         <%
-            Klant k = (Klant)request.getAttribute("deUser");
             Klant u = (Klant)request.getSession().getAttribute("ingelogdeUser");
             String username = "";
             String name = "";
@@ -23,7 +22,15 @@
             }
         %>
         <h1>Je Profiel:</h1>
-        <form id="profileForm" action="" method="POST">
+        <form id="profileForm" action="ProfielEditServlet" method="POST">
+            <div id = "messagebox">
+                    <%
+                        Object obj = request.getAttribute("msgs");
+                        if (obj != null) {
+                            out.println(obj);
+                        }
+                    %>
+            </div>
             <table style="width: 100%;">
                 <tbody>
                     <tr>
@@ -53,7 +60,7 @@
                     <tr>
                         <td>Plaats:</td>
                         <td>
-                            <input type="text" style="width:100%;" value="<%=plaats%>" name="woonplaats" />
+                            <input type="text" style="width:100%;" value="<%=plaats%>" name="plaats" />
                         </td>
                     </tr>
                     <tr>
@@ -62,7 +69,7 @@
                     <tr>
                         <td>Telefoon:</td>
                         <td>
-                            <input type="text" style="width:100%;" name="user_phone" value="<%=telnr%>" />
+                            <input type="text" style="width:100%;" name="telnr" value="<%=telnr%>" />
                         </td>
                     </tr>
                     <tr>
@@ -83,13 +90,13 @@
                     <tr>
                         <td>Wachtwoord:</td>
                         <td>
-                            <input type="password" style="width:100%;" name="u_pass_1" />
+                            <input type="password" style="width:100%;" name="n_pass_1" />
                         </td>
                     </tr>
                     <tr>
                         <td>Herhaal wachtwoord:</td>
                         <td>
-                            <input type="password" style="width:100%;" name="u_pass_2" />
+                            <input type="password" style="width:100%;" name="n_pass_2" />
                         </td>
                     </tr>
                     <tr>
