@@ -54,10 +54,10 @@
             <div class="login-wrapper">
                 <div class="login-content">
                     <a class="close" href="#" onclick="toggle_visibility('overlay');">x</a>
-                    <h3>Sign in</h3>
+                    <h3>Inloggen</h3>
                     <form action="LoginServlet" method="POST">
                         <label for="username">
-                        Username:
+                        Gebruikersnaam: 
                         <input id="username" class="login" type="text" name="username" placeholder="Gebruikersnaam" value="<% 
                             if(myCookie != null){
                                 out.println(myCookie.getValue());
@@ -65,10 +65,10 @@
                         %>"  REQUIRED/>
                         </label>
                         <label for="password">
-                        Password:
+                        Wachtwoord: 
                         <input id="password" class="login" type="password" name="password" placeholder="Wachtwoord" value="" REQUIRED/>
                         </label>
-                        <label>remember me: </label><input class="RememberMe" type="checkbox" name="remember me" value="" />
+                        <label for="rememberMe">remember me: <input id="rememberMe" class="RememberMe" type="checkbox" name="remember me" value="" /></label>
                         <input class="loginButton" type="submit" name="submit" value="inloggen" />
                     </form>
                 </div>
