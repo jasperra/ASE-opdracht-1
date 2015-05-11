@@ -68,7 +68,7 @@
                         Wachtwoord: 
                         <input id="password" class="login" type="password" name="password" placeholder="Wachtwoord" value="" REQUIRED/>
                         </label>
-                        <label for="rememberMe">remember me: <input id="rememberMe" class="RememberMe" type="checkbox" name="remember me" value="" /></label>
+                        <label for="rememberMe">Remember me: <input id="rememberMe" class="RememberMe" type="checkbox" name="remember me" value="" /></label>
                         <input class="loginButton" type="submit" name="submit" value="inloggen" />
                     </form>
                 </div>
