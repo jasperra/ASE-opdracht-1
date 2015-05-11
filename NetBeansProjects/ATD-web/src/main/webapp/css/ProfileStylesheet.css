@@ -13,7 +13,8 @@ and open the template in the editor.
 	padding:5px 5px 5px 10px;
 	margin-bottom:5px;
 	max-width:93%;
-	width:100%
+	width:100%;
+        font-size: 14px;
 }
 
 #profileForm input[type=text]:hover{
