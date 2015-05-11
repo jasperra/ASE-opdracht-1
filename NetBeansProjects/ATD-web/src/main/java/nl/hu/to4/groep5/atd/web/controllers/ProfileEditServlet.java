@@ -10,7 +10,6 @@ import javax.servlet.http.*;
 public class ProfileEditServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     
-
     public ProfileEditServlet() { super(); }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 

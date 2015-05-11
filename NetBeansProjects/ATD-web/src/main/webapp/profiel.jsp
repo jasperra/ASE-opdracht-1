@@ -22,7 +22,7 @@
             }
         %>
         <h1>Je Profiel:</h1>
-        <form id="profileForm" action="ProfielEditServlet" method="POST">
+        <form id="profileForm" action="ProfileEditServlet" method="POST">
             <div id = "messagebox">
                     <%
                         Object obj = request.getAttribute("msgs");
