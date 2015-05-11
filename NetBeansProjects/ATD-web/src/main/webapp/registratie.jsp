@@ -35,10 +35,10 @@
                 </div>
                 <div id = "inputbox">
                     <h1>Registreren</h1>
-                    <input placeholder="Gebruikersnaam" type="text" name="username" required/><br />
+                    <input placeholder="Gebruikersnaam" type="text" name="username" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{5,20}$" required/><br />
                     <input placeholder="Naam" type="text" name="rname" required/><br />
-                    <input placeholder="Wachtwoord" type="password" name="password" required/><br />
-                    <input placeholder="Retype Wachtwoord" type="password" name="password2" required/><br />
+                    <input placeholder="Wachtwoord" type="password" name="password" pattern="(?=^.{5,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required/><br />
+                    <input placeholder="Retype Wachtwoord" type="password" name="password2" pattern="(?=^.{5,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required/><br />
                     <input placeholder="Emailadres" type="text" name="email" required/><br />
                     <input placeholder="Retype Emailadres" type="text" name="email2" required/><br />
                     <input placeholder="Telefoon-nummer" type="text" name="telnr" required/><br />
