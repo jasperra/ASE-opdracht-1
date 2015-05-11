@@ -1,17 +1,12 @@
-<%-- 
-    Document   : voorraadbeheer
-    Created on : 1-mei-2015, 13:36:47
-    Author     : Roger
---%>
-
+<%@page import="java.util.ArrayList"%>
+<%@page import="nl.hu.to4.groep5.atd.web.domain.*"%>
+<jsp:include page="header.jsp"/>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
+
+        <% 
+            Bedrijf b = (Bedrijf)getServletContext().getAttribute("hetBedrijf"); 
+            ArrayList<Artikel> alleArtikelen = b.getAlleArtikelen();
+        %>
         <form action = "VoorraadbeheerServlet.java" method = "post">
             <table border=1 cellpadding=5>
                 <tr>
@@ -20,12 +15,16 @@
                   <th>Aantal</th>
                 </tr>
                 
-                <tr>
-                    <%-- Hier komen de requests van de lijsten --%>
-                    <td>Moer</td>
-                    <td>A1</td>
-                    <td>333</td>
-                </tr>
+                <% for(Artikel a : alleArtikelen) 
+                    {
+                    out.println("<tr>");
+                         out.println("<td>" + a.getCode() + "</td>");
+                         out.println("<td> " + a.getType()+ " </td>");
+                         out.println( "<td> " + a.getAantal()+ "</td>");
+                    out.println("</tr>");
+                    }
+                %>
+                
             </table>
                
         </form>

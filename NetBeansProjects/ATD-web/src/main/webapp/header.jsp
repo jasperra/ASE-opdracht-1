@@ -24,7 +24,7 @@
     <div id="container">
         <div id="menu">
             <ul>
-                <li><div><a>Voorraad beheer</a></div></li>
+                <li><div><a href="voorraadbeheer.jsp">Voorraad beheer</a></div></li>
                 <li><div><a>Agenda</a></div></li>
                 <li><div><a>Facturen</a></div></li>
                 <li><div><a>Klanten</a></div></li>
