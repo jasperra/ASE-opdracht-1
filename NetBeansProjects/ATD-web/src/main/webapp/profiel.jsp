@@ -29,31 +29,31 @@
                     <tr>
                         <td style="width: 25%;">Gebruikersnaam:</td>
                         <td style="width: 75%;">
-                            <input type="text" style="width:100%;" value="<%=username%>" disabled=""></input>
+                            <input type="text" style="width:100%;" value="<%=username%>" disabled="" />
                         </td>
                     </tr>
                     <tr>
                         <td>E-mail adres:</td>
                         <td>
-                            <input type="text" style="width:100%;" value="<%=email%>" name="email"></input>
+                            <input type="text" style="width:100%;" value="<%=email%>" name="email" />
                         </td>
                     </tr>
                     <tr>
                         <td>Naam:</td>
                         <td>
-                            <input type="text" style="width:100%;" value="<%=name%>" name="name"></input>
+                            <input type="text" style="width:100%;" value="<%=name%>" name="name" />
                         </td>
                     </tr>
                     <tr>
                         <td>Postcode:</td>
                         <td>
-                            <input type="text" style="width:100%;" value="<%=postcd%>" name="postcode"></input>
+                            <input type="text" style="width:100%;" value="<%=postcd%>" name="postcode" />
                         </td>
                     </tr>
                     <tr>
                         <td>Plaats:</td>
                         <td>
-                            <input type="text" style="width:100%;" value="<%=plaats%>" name="woonplaats"></input>
+                            <input type="text" style="width:100%;" value="<%=plaats%>" name="woonplaats" />
                         </td>
                     </tr>
                     <tr>
@@ -62,7 +62,7 @@
                     <tr>
                         <td>Telefoon:</td>
                         <td>
-                            <input type="text" style="width:100%;" name="user_phone" value="<%=telnr%>"></input>
+                            <input type="text" style="width:100%;" name="user_phone" value="<%=telnr%>" />
                         </td>
                     </tr>
                     <tr>
@@ -77,19 +77,19 @@
                     <tr>
                         <td>Oud wachtwoord:</td>
                         <td>
-                            <input type="password" style="width:100%;" name="o_pass"></input>
+                            <input type="password" style="width:100%;" name="o_pass" />
                         </td>
                     </tr>
                     <tr>
                         <td>Wachtwoord:</td>
                         <td>
-                            <input type="password" style="width:100%;" name="u_pass_1"></input>
+                            <input type="password" style="width:100%;" name="u_pass_1" />
                         </td>
                     </tr>
                     <tr>
                         <td>Herhaal wachtwoord:</td>
                         <td>
-                            <input type="password" style="width:100%;" name="u_pass_2"></input>
+                            <input type="password" style="width:100%;" name="u_pass_2" />
                         </td>
                     </tr>
                     <tr>
@@ -99,7 +99,7 @@
                     <tr>
                         <td></td>
                         <td>
-                            <input type="submit" style="width:100%;" value="Opslaan" name="submit_register"></input>
+                            <input type="submit" style="width:100%;" value="Opslaan" name="submit_register" />
                         </td>
                     </tr>
                 </tbody>
