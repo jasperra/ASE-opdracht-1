@@ -47,45 +47,33 @@
                 <li><div><a>Facturen</a></div></li>
                 <li><div><a>Klanten</a></div></li>
                 <li><div><a>Parkeren</a></div></li>
-                <li><div><a href="#" onclick="toggle_visibility('overlay');">inloggen</a></div></li>
+                <li><div><a href="#" onclick="toggle_visibility('overlay');">Inloggen</a></div></li>
             </ul>
-            <div class="login">
-                <form action="LoginServlet" method="POST">
-                    <input class="login" type="text" name="username" placeholder="Gebruikersnaam" value="<% 
-                        if(myCookie != null){
-                            out.println(myCookie.getValue());
-                        }
-                    %>" REQUIRED/>
-                    <input class="login" type="password" name="password" placeholder="Wachtwoord" value="" REQUIRED/>
-                    <label>remember me: </label><input class="RememberMe" type="checkbox" name="remember me" value="" />
-                    <input class="loginButton" type="submit" name="submit" value="inloggen" />
-                </form>
+        </div>
+        <div id="overlay" class="overlay" style="display: none;">
+            <div class="login-wrapper">
+                <div class="login-content">
+                    <a class="close" href="#" onclick="toggle_visibility('overlay');">x</a>
+                    <h3>Sign in</h3>
+                    <form action="LoginServlet" method="POST">
+                        <label for="username">
+                        Username:
+                        <input id="username" class="login" type="text" name="username" placeholder="Gebruikersnaam" value="<% 
+                            if(myCookie != null){
+                                out.println(myCookie.getValue());
+                            }
+                        %>"  REQUIRED/>
+                        </label>
+                        <label for="password">
+                        Password:
+                        <input id="password" class="login" type="password" name="password" placeholder="Wachtwoord" value="" REQUIRED/>
+                        </label>
+                        <label>remember me: </label><input class="RememberMe" type="checkbox" name="remember me" value="" />
+                        <input class="loginButton" type="submit" name="submit" value="inloggen" />
+                    </form>
+                </div>
             </div>
         </div>
         <div id="inhoud">
-            <div id="overlay" class="overlay" style="display: none;">
-                <div class="login-wrapper">
-                    <div class="login-content">
-                        <a class="close" href="#" onclick="toggle_visibility('overlay');">x</a>
-                        <h3>Sign in</h3>
-                        <form action="LoginServlet" method="POST">
-                            <label for="username">
-                            Username:
-                            <input id="username" class="login" type="text" name="username" placeholder="Gebruikersnaam" value="<% 
-                                if(myCookie != null){
-                                    out.println(myCookie.getValue());
-                                }
-                            %>" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{5,20}$" REQUIRED/>
-                           </label>
-                        <label for="password">
-                            Password:
-                            <input id="password" class="login" type="password" name="password" placeholder="Wachtwoord" value="" pattern="(?=^.{5,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" REQUIRED/>
-                        </label>
-                        <label>remember me: </label><input class="RememberMe" type="checkbox" name="remember me" value="" />
-                        
-                        <input class="loginButton" type="submit" name="submit" value="inloggen" />
-                        </form>
-                    </div>
-                </div>
-            </div>
+            
         
