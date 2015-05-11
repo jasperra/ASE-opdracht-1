@@ -8,9 +8,8 @@
         <link href='http://fonts.googleapis.com/css?family=Varela+Round|Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
         <script type="text/javascript">
             <!--
-                function close(id){
-                    var e = document.getElementById(id);
-                    e.style.display = 'none';
+                function popup(){
+                    cuteLittleWindow = window.open("aanpasSchermVoorraad.html", "littleWindow", "location=no,width=320,height=200"); 
                 }
                 
                 function toggle_visibility(id) {

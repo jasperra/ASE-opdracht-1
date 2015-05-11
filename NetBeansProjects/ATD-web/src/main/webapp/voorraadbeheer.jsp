@@ -21,13 +21,12 @@
                          out.println("<td>" + a.getCode() + "</td>");
                          out.println("<td> " + a.getType()+ " </td>");
                          out.println( "<td> " + a.getAantal()+ "</td>");
-                         out.println("<td><form action='VoorraadbeheerServlet' method='POST'><input type= 'submit' value='Aanpassen'/></form></td>");
+                         out.println("<td class='klikbaar' onclick='popup();'>Aanpassen</td>");
                     out.println("</tr>");
                     }
                 %>
                 
             </table>
-               
         </form>
     </body>
 </html>

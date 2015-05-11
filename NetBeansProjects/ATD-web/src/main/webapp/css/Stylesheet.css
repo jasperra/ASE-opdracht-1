@@ -124,6 +124,10 @@ ul li ul li:hover {
     border: solid 1px black;
 }
 
+.klikbaar{
+    cursor: pointer;
+}
+
 .login{
     border-radius: 25px;
     display: block;
@@ -246,17 +250,14 @@ div.overlay > div.login-wrapper > div.login-content {
 
 div.overlay > div.login-wrapper {
     align-self: center;
-    background-color: rgba(0,0,0,.25);
     border-radius: 2px;
-    padding: 6px;
+    padding-left: 30%;
     width: 450px;
 }
 
 div.overlay {
     background-color: rgba(0,0,0,.25);
     bottom: 0;
-    display: flex;
-    justify-content: center;
     left: 0;
     position: fixed;
     top: 0;
