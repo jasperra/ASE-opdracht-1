@@ -26,7 +26,7 @@ public class LoginServlet extends HttpServlet {
         boolean remember = false;
         ArrayList<Klant> alleUsers = null;
         
-        RequestDispatcher rd = request.getRequestDispatcher("registratie.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
         
         if(rememberMe != null){
             remember = true;
