@@ -21,6 +21,7 @@
                          out.println("<td>" + a.getCode() + "</td>");
                          out.println("<td> " + a.getType()+ " </td>");
                          out.println( "<td> " + a.getAantal()+ "</td>");
+                         out.println("<td><form action='VoorraadbeheerServlet' method='POST'><input type= 'submit' value='Aanpassen'/></form></td>");
                     out.println("</tr>");
                     }
                 %>
