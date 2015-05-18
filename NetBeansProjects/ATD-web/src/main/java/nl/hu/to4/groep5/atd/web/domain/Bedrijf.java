@@ -60,55 +60,55 @@ public class Bedrijf implements Serializable{
 	}
 	
 	public boolean heeftKlant(String kN) {
-		boolean b = false;
-		for (Klant k : alleKlanten) {
-			if (k.getNaam().equals(kN)) {
-				b = true;
-			}
-		}
-		return b;
+            boolean b = false;
+            for (Klant k : alleKlanten) {
+                if (k.getUsername().equals(kN)) {
+                    b = true;
+                }
+            }
+            return b;
 	}
 	
 	public void verwijderKlant(Klant exKlant) {
-		if (heeftKlant(exKlant.getNaam())){
-			alleKlanten.remove(exKlant);
-		}
+            if(heeftKlant(exKlant.getUsername())){
+                alleKlanten.remove(exKlant);
+            }
 	}
 	
 	public void voegDienstToe(Dienst d) {
-		alleDiensten.add(d);
+            alleDiensten.add(d);
 	}
 	
 	public void voegFactuurToe(Factuur f) {
-		alleFacturen.add(f);
+            alleFacturen.add(f);
 	}
 	
 	public int aantalKlanten() {
-		return alleKlanten.size();
+            return alleKlanten.size();
 	}
 	
 	public ArrayList<Klant> getAlleKlanten() {
-		return alleKlanten;
+            return alleKlanten;
 	}
 	
 	public ArrayList<Artikel> getAlleArtikelen() {
-		return alleArtikelen;
+            return alleArtikelen;
 	}
 	
 	public ArrayList<Factuur> getAlleFacturen() {
-		return alleFacturen;
+            return alleFacturen;
 	}
 	
 	public ArrayList<Dienst> getAlleDiensten() {
-		return alleDiensten;
+            return alleDiensten;
 	}
 	
 	public ArrayList<Monteur> getAlleMonteurs() {
-		return alleMonteurs;
+            return alleMonteurs;
 	}
 	
 	public ArrayList<Auto> getAlleAutos() {
-		return alleAutos;
+            return alleAutos;
 	}
 	
         public void setAlleKlanten(ArrayList<Klant> k){

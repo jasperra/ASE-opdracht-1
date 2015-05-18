@@ -45,33 +45,33 @@
             <table style="width: 100%;">
                 <tbody>
                     <tr>
-                        <td style="width: 25%;">Gebruikersnaam:</td>
+                        <td>Gebruikersnaam:</td>
                         <td style="width: 75%;">
-                            <input type="text" style="width:100%;" value="<%=username%>" name="username" readonly/>
+                            <input type="text" value="<%=username%>" name="username" readonly/>
                         </td>
                     </tr>
                     <tr>
                         <td>E-mail adres:</td>
                         <td>
-                            <input type="text" style="width:100%;" value="<%=email%>" name="email" required/>
+                            <input type="text" value="<%=email%>" name="email" required/>
                         </td>
                     </tr>
                     <tr>
                         <td>Naam:</td>
                         <td>
-                            <input type="text" style="width:100%;" value="<%=name%>" name="name" required/>
+                            <input type="text" value="<%=name%>" name="name" required/>
                         </td>
                     </tr>
                     <tr>
                         <td>Postcode:</td>
                         <td>
-                            <input type="text" style="width:100%;" value="<%=postcd%>" name="postcode" required/>
+                            <input type="text" value="<%=postcd%>" name="postcode" required/>
                         </td>
                     </tr>
                     <tr>
                         <td>Plaats:</td>
                         <td>
-                            <input type="text" style="width:100%;" value="<%=plaats%>" name="plaats" required/>
+                            <input type="text" value="<%=plaats%>" name="plaats" required/>
                         </td>
                     </tr>
                     <tr>
@@ -80,7 +80,7 @@
                     <tr>
                         <td>Telefoon:</td>
                         <td>
-                            <input type="text" style="width:100%;" name="telnr" value="<%=telnr%>" required/>
+                            <input type="text" name="telnr" value="<%=telnr%>" required/>
                         </td>
                     </tr>
                     <tr>
@@ -93,21 +93,21 @@
                         <td>(Alleen invullen als je het wilt wijzigen.)</td>
                     </tr>
                     <tr>
-                        <td>Oud wachtwoord:</td>
-                        <td>
-                            <input type="password" style="width:100%;" name="o_pass" />
+                        <td style="width: 25%;">Oud wachtwoord:</td>
+                        <td style="width: 75%;">
+                            <input type="password" name="o_pass" />
                         </td>
                     </tr>
                     <tr>
                         <td>Wachtwoord:</td>
                         <td>
-                            <input type="password" style="width:100%;" name="n_pass_1" />
+                            <input type="password" name="n_pass_1" />
                         </td>
                     </tr>
                     <tr>
                         <td>Herhaal wachtwoord:</td>
                         <td>
-                            <input type="password" style="width:100%;" name="n_pass_2" />
+                            <input type="password" name="n_pass_2" />
                         </td>
                     </tr>
                     <tr>
@@ -118,6 +118,33 @@
                         <td></td>
                         <td>
                             <input type="submit" style="width:100%;" value="Opslaan" name="submit_register" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        <form id="deleteForm" action="ProfileDeleteServlet" method="POST">
+            <div id = "messagebox">
+                    <%
+                        Object o = request.getAttribute("deletemessage");
+                        if (obj != null) {
+                            out.println(o);
+                        }
+                    %>
+            </div>
+            <table style="width: 100%;">
+                <tbody>
+                    <tr>
+                        <td>Account verwijderen</td>
+                        <td style="width: 75%;">
+                            <input style="position:absolute;visibility: hidden; width: 0px; height: 0px;" type="text" value="<%=username%>" name="username">
+                            Ja ik wil mijn account verwijderen<input type="checkbox" required/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" style="width:100%;" value="Verwijderen" name="submit_register" />
                         </td>
                     </tr>
                 </tbody>

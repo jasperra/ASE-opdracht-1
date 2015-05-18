@@ -65,13 +65,17 @@ public class ProfileEditServlet extends HttpServlet {
                         k.setTelefoonnummer(telnr);
                             System.out.println(k.getTelefoonnummer());
                         
-                        if(!o_pass.equals("") && !n_pass_1.equals("") && !n_pass_2.equals("") && n_pass_1.equals(n_pass_2)){
-                            if(k.login(o_pass)){
-                                k.setWachtwoord(n_pass_1);
+                        if(!o_pass.equals("") && !n_pass_1.equals("") && !n_pass_2.equals("")){
+                            if(n_pass_2.equals(n_pass_1)){
+                                if(k.login(o_pass)){
+                                    k.setWachtwoord(n_pass_1);
                                     System.out.println(k.getWachtwoord());
-                            }
-                            else{
-                                request.setAttribute("msgs", "Wrong password");
+                                }
+                                else{
+                                    request.setAttribute("msgs", "Wrong password");
+                                }
+                            }else{
+                                request.setAttribute("msgs", "New Passwords do not match");
                             }
                         }
                         break;
