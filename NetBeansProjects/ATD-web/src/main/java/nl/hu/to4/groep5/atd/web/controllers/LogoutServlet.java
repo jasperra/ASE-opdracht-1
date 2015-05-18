@@ -37,7 +37,9 @@ public class LogoutServlet extends HttpServlet{
             response.addCookie(loginCookie);
             System.out.println("asdfuoas;djf");
             request.getRequestDispatcher("index.jsp").forward(request, response);
+        }else{
+            System.out.println("Logincookie = null");
+            request.getRequestDispatcher("profiel.jsp").forward(request, response);
         }
-        System.out.println("Logincookie = null");
     }
 }

@@ -48,23 +48,33 @@ public class ProfileEditServlet extends HttpServlet {
             Object hetBedrijf = getServletContext().getAttribute("hetBedrijf");
             if(hetBedrijf != null){
                 Bedrijf b = (Bedrijf)hetBedrijf;
-                
+                System.out.println("Bedrijf aanmaken");
+                System.out.println(username);
                 for(Klant k : b.getAlleKlanten()){
+                    System.out.println("doorzoeken van de klanten");
                     if(k.getUsername().equals(username)){
+                        System.out.println("Klant gevonden");
                         k.setNaam(name);
+                            System.out.println(k.getNaam());
                         k.setEmailadres(email);
+                            System.out.println(k.getEmailadres());
                         k.setPostcode(postcd);
+                            System.out.println(k.getPostcode());
                         k.setPlaats(plaats);
+                            System.out.println(k.getPlaats());
                         k.setTelefoonnummer(telnr);
+                            System.out.println(k.getTelefoonnummer());
                         
                         if(!o_pass.equals("") && !n_pass_1.equals("") && !n_pass_2.equals("") && n_pass_1.equals(n_pass_2)){
                             if(k.login(o_pass)){
                                 k.setWachtwoord(n_pass_1);
+                                    System.out.println(k.getWachtwoord());
                             }
                             else{
                                 request.setAttribute("msgs", "Wrong password");
                             }
-                        }   
+                        }
+                        break;
                     }
                 }
                 getServletContext().setAttribute("hetBedrijf",b);

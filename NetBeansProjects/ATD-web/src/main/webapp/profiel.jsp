@@ -47,7 +47,7 @@
                     <tr>
                         <td style="width: 25%;">Gebruikersnaam:</td>
                         <td style="width: 75%;">
-                            <input type="text" style="width:100%;" value="<%=username%>" name="username" disabled="" required/>
+                            <input type="text" style="width:100%;" value="<%=username%>" name="username" readonly/>
                         </td>
                     </tr>
                     <tr>
