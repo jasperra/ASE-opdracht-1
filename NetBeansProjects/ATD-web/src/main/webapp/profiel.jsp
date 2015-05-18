@@ -9,13 +9,20 @@
             String telnr = "";
             String postcd = "";
             String plaats = "";
-            if(u != null){
-                username = u.getUsername();
-                name = u.getNaam();
-                email = u.getEmailadres();
-                telnr = u.getTelefoonnummer();
-                postcd = u.getPostcode();
-                plaats = u.getPlaats();
+            
+            Object hetBedrijf = getServletContext().getAttribute("hetBedrijf");
+            if(hetBedrijf != null){
+                Bedrijf b = (Bedrijf)hetBedrijf;
+                for(Klant k : b.getAlleKlanten()){
+                    if(k.getUsername().equals(u.getUsername())){
+                        username = k.getUsername();
+                        name = k.getNaam();
+                        email = k.getEmailadres();
+                        telnr = k.getTelefoonnummer();
+                        postcd = k.getPostcode();
+                        plaats = k.getPlaats();
+                    }
+                }
             }
             else{
                 response.sendRedirect("index.jsp");
@@ -36,31 +43,31 @@
                     <tr>
                         <td style="width: 25%;">Gebruikersnaam:</td>
                         <td style="width: 75%;">
-                            <input type="text" style="width:100%;" value="<%=username%>" disabled="" />
+                            <input type="text" style="width:100%;" value="<%=username%>" name="username" disabled="" required/>
                         </td>
                     </tr>
                     <tr>
                         <td>E-mail adres:</td>
                         <td>
-                            <input type="text" style="width:100%;" value="<%=email%>" name="email" />
+                            <input type="text" style="width:100%;" value="<%=email%>" name="email" required/>
                         </td>
                     </tr>
                     <tr>
                         <td>Naam:</td>
                         <td>
-                            <input type="text" style="width:100%;" value="<%=name%>" name="name" />
+                            <input type="text" style="width:100%;" value="<%=name%>" name="name" required/>
                         </td>
                     </tr>
                     <tr>
                         <td>Postcode:</td>
                         <td>
-                            <input type="text" style="width:100%;" value="<%=postcd%>" name="postcode" />
+                            <input type="text" style="width:100%;" value="<%=postcd%>" name="postcode" required/>
                         </td>
                     </tr>
                     <tr>
                         <td>Plaats:</td>
                         <td>
-                            <input type="text" style="width:100%;" value="<%=plaats%>" name="plaats" />
+                            <input type="text" style="width:100%;" value="<%=plaats%>" name="plaats" required/>
                         </td>
                     </tr>
                     <tr>
@@ -69,7 +76,7 @@
                     <tr>
                         <td>Telefoon:</td>
                         <td>
-                            <input type="text" style="width:100%;" name="telnr" value="<%=telnr%>" />
+                            <input type="text" style="width:100%;" name="telnr" value="<%=telnr%>" required/>
                         </td>
                     </tr>
                     <tr>
@@ -79,7 +86,7 @@
                         <td>
                             <b>Beveiliging:</b>
                         </td>
-                        <td></td>
+                        <td>(Alleen invullen als je het wilt wijzigen.)</td>
                     </tr>
                     <tr>
                         <td>Oud wachtwoord:</td>
