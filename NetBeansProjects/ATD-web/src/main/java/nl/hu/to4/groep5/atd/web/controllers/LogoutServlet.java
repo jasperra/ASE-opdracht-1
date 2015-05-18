@@ -23,20 +23,20 @@ public class LogoutServlet extends HttpServlet{
         Cookie loginCookie = null;
         Cookie[] cookies = request.getCookies();
         if(cookies != null){
-            if(cookies != null){
-                for(int i = 0; i < cookies.length; i++){
-                    if(cookies[i].getName().equals("user")){
-                        loginCookie = cookies[i];
-                        break;
-                    }
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("user")) {
+                    loginCookie = cookie;
+                    break;
                 }
             }
         }
         if(loginCookie != null){
+            loginCookie = new Cookie("user", null);
             loginCookie.setMaxAge(0);
+            loginCookie.setPath("/");
             response.addCookie(loginCookie);
-            rd = request.getRequestDispatcher("index.jsp");
-            rd.forward(request, response);
+            System.out.println("asdfuoas;djf");
+            request.getRequestDispatcher("index.jsp").forward(request, response);
         }
         System.out.println("Logincookie = null");
     }

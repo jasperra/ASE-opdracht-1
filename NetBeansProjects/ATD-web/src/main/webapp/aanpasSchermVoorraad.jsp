@@ -5,7 +5,6 @@
 --%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="nl.hu.to4.groep5.atd.web.domain.*"%>
-<jsp:include page="header.jsp"/>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
         <h1>Voorraad aanpassen</h1>
     </body>

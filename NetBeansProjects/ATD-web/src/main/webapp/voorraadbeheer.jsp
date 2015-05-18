@@ -21,12 +21,20 @@
                          out.println("<td>" + a.getCode() + "</td>");
                          out.println("<td> " + a.getType()+ " </td>");
                          out.println( "<td> " + a.getAantal()+ "</td>");
-                         out.println("<td class='klikbaar' onclick='popup();'>Aanpassen</td>");
+                         out.println("<td class='klikbaar' onclick='toggle_visibility('overlay');'>Aanpassen</td>");
                     out.println("</tr>");
                     }
                 %>
                 
             </table>
         </form>
+        <div id='overlay' class='overlay' style='display: none;'>
+            <div class='login-wrapper'>
+                <div class='login-content'>
+                    <a class='close' href='#' onclick="toggle_visibility('overlay');">x</a>
+                    <h3>Inloggen</h3>
+		</div>
+            </div>
+        </div>
     </body>
 </html>
