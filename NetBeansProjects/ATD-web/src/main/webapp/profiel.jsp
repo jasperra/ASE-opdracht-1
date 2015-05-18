@@ -2,7 +2,9 @@
         <jsp:include page="header.jsp" />
         <link href ="css/ProfileStylesheet.css" rel="stylesheet" type="text/css" />
         <%
-            Klant u = (Klant)request.getSession().getAttribute("ingelogdeUser");
+            if(request.getSession().getAttribute("ingelogdeUser") != null){
+                Klant u = (Klant)request.getSession().getAttribute("ingelogdeUser");
+            }
             String username = "";
             String name = "";
             String email = "";
@@ -11,8 +13,10 @@
             String plaats = "";
             
             Object hetBedrijf = getServletContext().getAttribute("hetBedrijf");
-            if(hetBedrijf != null){
+            Object deUser = request.getSession().getAttribute("ingelogdeUser");
+            if(hetBedrijf != null && deUser != null){
                 Bedrijf b = (Bedrijf)hetBedrijf;
+                Klant u = (Klant)deUser;
                 for(Klant k : b.getAlleKlanten()){
                     if(k.getUsername().equals(u.getUsername())){
                         username = k.getUsername();

@@ -47,6 +47,7 @@
                 <li><div><a>Klanten</a></div></li>
                 <li><div><a>Parkeren</a></div></li>
                 <li><div><a href="#" onclick="toggle_visibility('overlay');">Inloggen</a></div></li>
+                <li><form action="LogoutServlet" method="POST"><input class="loginButton" type="submit" name="submit" value="Afmelden" /></form></li>
             </ul>
         </div>
         <div id="overlay" class="overlay" style="display: none;">
