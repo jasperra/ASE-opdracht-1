@@ -10,31 +10,45 @@
         <form action = "VoorraadbeheerServlet.java" method = "post">
             <table border=1 cellpadding=5>
                 <tr>
-                  <th>Code</th>
-                  <th>Type</th>
-                  <th>Aantal</th>
+                    <th>Code</th>
+                    <th>Type</th>
+                    <th>Aantal</th>
                 </tr>
                 
                 <% for(Artikel a : alleArtikelen) 
                     {
-                    out.println("<tr>");
+                    out.println("<tr onclick='myFunction(this)'>");
                          out.println("<td>" + a.getCode() + "</td>");
                          out.println("<td> " + a.getType()+ " </td>");
                          out.println( "<td> " + a.getAantal()+ "</td>");
-                         out.println("<td class='klikbaar' onclick='toggle_visibility('overlay');'>Aanpassen</td>");
+                         out.println("<td class='klikbaar' onclick='toggle_visibility(\"popUp\");'>Aanpassen</td>");
                     out.println("</tr>");
                     }
                 %>
                 
             </table>
         </form>
-        <div id='overlay' class='overlay' style='display: none;'>
+        <div id='popUp' class='overlay' style='display: none;'>
             <div class='login-wrapper'>
                 <div class='login-content'>
-                    <a class='close' href='#' onclick="toggle_visibility('overlay');">x</a>
-                    <h3>Inloggen</h3>
+                    <a class='close' href='#' onclick="toggle_visibility('popUp');">x</a>
+                    <h3>Artikel: </h3>
 		</div>
             </div>
         </div>
+                <script type="text/javascript">
+                    function handleEvent(e){
+                        
+                    }
+                    
+                    function myFunction(x) {
+                        alert("Row index is: " + x.rowIndex);
+                    }
+                    
+                    var rows = document.getElementByTageName('tr');
+                    for(var row in rows){
+                        row.addEventListener("click", handleEvent);
+                    }
+                </script>
     </body>
 </html>
