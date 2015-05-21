@@ -2,30 +2,47 @@
         <jsp:include page="header.jsp" />
         <link href ="css/ProfileStylesheet.css" rel="stylesheet" type="text/css" />
         <%
-            if(request.getSession().getAttribute("ingelogdeUser") != null){
-                Klant u = (Klant)request.getSession().getAttribute("ingelogdeUser");
-            }
             String username = "";
             String name = "";
             String email = "";
             String telnr = "";
             String postcd = "";
             String plaats = "";
+            boolean wiltHer = false;
+            boolean klant = true;
+            
             
             Object hetBedrijf = getServletContext().getAttribute("hetBedrijf");
             Object deUser = request.getSession().getAttribute("ingelogdeUser");
             if(hetBedrijf != null && deUser != null){
                 Bedrijf b = (Bedrijf)hetBedrijf;
-                Klant u = (Klant)deUser;
-                for(Klant k : b.getAlleKlanten()){
-                    if(k.getUsername().equals(u.getUsername())){
-                        username = k.getUsername();
-                        name = k.getNaam();
-                        email = k.getEmailadres();
-                        telnr = k.getTelefoonnummer();
-                        postcd = k.getPostcode();
-                        plaats = k.getPlaats();
+                try{
+                    Klant u = (Klant)deUser;
+                    for(Klant k : b.getAlleKlanten()){
+                        if(k.getUsername().equals(u.getUsername())){
+                            username = k.getUsername();
+                            name = k.getNaam();
+                            email = k.getEmailadres();
+                            telnr = k.getTelefoonnummer();
+                            postcd = k.getPostcode();
+                            plaats = k.getPlaats();
+                            wiltHer = k.getWiltHerinnering();
+                        }
                     }
+                    klant = true;
+                }catch(ClassCastException cce){
+                    Medewerker mw = (Medewerker)deUser;
+                    for(Medewerker m : b.getAlleMedewerkers()){
+                        if(m.getUsername().equals(mw.getUsername())){
+                            username = m.getUsername();
+                            name = m.getNaam();
+                            email = m.getEmailadres();
+                            telnr = m.getTelefoonnummer();
+                            postcd = m.getPostcode();
+                            plaats = m.getPlaats();
+                        }
+                    }
+                    klant = false;
                 }
             }
             else{
@@ -86,6 +103,26 @@
                     <tr>
                         <td></td>
                     </tr>
+                    <% if(klant == true){ %>
+                        <tr>
+                            <td>Wilt Herinnering?</td>
+                            <td>
+                                <% if(wiltHer == false){ System.out.println("wiltHer = false");
+                                    out.println("<input type='checkbox' name='wiltHer' />");
+                                } else if(wiltHer == true) { System.out.println("wiltHer = true");
+                                    out.println("<input type='checkbox' name='wiltHer' checked/>");
+                                } 
+                                //Dit werkt nog niet helemaal, hij update de checkbox niet nadat op opslaan geklikt is
+                                %> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <br/>
+                                <br/>
+                            </td>
+                        </tr>
+                    <% } %>
                     <tr>
                         <td>
                             <b>Beveiliging:</b>

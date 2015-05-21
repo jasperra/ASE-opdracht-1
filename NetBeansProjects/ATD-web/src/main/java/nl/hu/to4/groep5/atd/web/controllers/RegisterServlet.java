@@ -61,7 +61,7 @@ public class RegisterServlet extends HttpServlet {
         if (registerSucces) {
             System.out.println("Succes, Started Registering");
             
-            Klant k = new Klant(name,realname,pass,telnr,postcode,plaats,email, true);
+            Klant k = new Klant(name,realname,pass,telnr,postcode,plaats,email,wiltHer);
             Object hetBedrijf = getServletContext().getAttribute("hetBedrijf");
             if(hetBedrijf != null){
                 Bedrijf b = (Bedrijf)hetBedrijf;

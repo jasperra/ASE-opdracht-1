@@ -26,6 +26,17 @@ public class ProfileEditServlet extends HttpServlet {
         String o_pass = request.getParameter("o_pass");
         String n_pass_1 = request.getParameter("n_pass_1");
         String n_pass_2 = request.getParameter("n_pass_2");
+        String herinnering = request.getParameter("wiltHer");
+        Boolean wiltHer = false;
+        if(herinnering == null){
+            wiltHer = false;
+            System.out.println("her = false");
+        }
+        else if(herinnering.equals("on")){
+            wiltHer = true;
+            System.out.println("her = true");
+        }
+        
         
         RequestDispatcher rd = null;
         
@@ -48,8 +59,6 @@ public class ProfileEditServlet extends HttpServlet {
             Object hetBedrijf = getServletContext().getAttribute("hetBedrijf");
             if(hetBedrijf != null){
                 Bedrijf b = (Bedrijf)hetBedrijf;
-                System.out.println("Bedrijf aanmaken");
-                System.out.println(username);
                 for(Klant k : b.getAlleKlanten()){
                     System.out.println("doorzoeken van de klanten");
                     if(k.getUsername().equals(username)){
@@ -64,12 +73,44 @@ public class ProfileEditServlet extends HttpServlet {
                             System.out.println(k.getPlaats());
                         k.setTelefoonnummer(telnr);
                             System.out.println(k.getTelefoonnummer());
-                        
+                        k.setWiltHerinnering(true);
+                            System.out.println("" + k.getWiltHerinnering());
                         if(!o_pass.equals("") && !n_pass_1.equals("") && !n_pass_2.equals("")){
                             if(n_pass_2.equals(n_pass_1)){
                                 if(k.login(o_pass)){
                                     k.setWachtwoord(n_pass_1);
                                     System.out.println(k.getWachtwoord());
+                                }
+                                else{
+                                    request.setAttribute("msgs", "Wrong password");
+                                }
+                            }else{
+                                request.setAttribute("msgs", "New Passwords do not match");
+                            }
+                        }
+                        break;
+                    }
+                }
+                for(Medewerker m : b.getAlleMedewerkers()){
+                    System.out.println("doorzoeken van de medewerkers");
+                    if(m.getUsername().equals(username)){
+                        System.out.println("medewerkers gevonden");
+                        m.setNaam(name);
+                            System.out.println(m.getNaam());
+                        m.setEmailadres(email);
+                            System.out.println(m.getEmailadres());
+                        m.setPostcode(postcd);
+                            System.out.println(m.getPostcode());
+                        m.setPlaats(plaats);
+                            System.out.println(m.getPlaats());
+                        m.setTelefoonnummer(telnr);
+                            System.out.println(m.getTelefoonnummer());
+
+                        if(!o_pass.equals("") && !n_pass_1.equals("") && !n_pass_2.equals("")){
+                            if(n_pass_2.equals(n_pass_1)){
+                                if(m.login(o_pass)){
+                                    m.setWachtwoord(n_pass_1);
+                                    System.out.println(m.getWachtwoord());
                                 }
                                 else{
                                     request.setAttribute("msgs", "Wrong password");

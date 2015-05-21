@@ -36,8 +36,8 @@ public class MyServletContextListener implements ServletContextListener {
         catch(IOException ioe){
             ioe.printStackTrace();
             b = new Bedrijf();
-            Klant k = new Klant("admin","admin","admin","admin","admin","admin","admin",false);
-            b.voegKlantToe(k);
+            Medewerker m = new Medewerker(0,"admin","admin","admin","admin","admin","admin","admin","admin@atd.nl");
+            b.voegMedewerkerToe(m);
             System.out.println("-");
             System.out.println("-");
             System.out.println("LAUNCHING --------------------------- IN DE CATCH");

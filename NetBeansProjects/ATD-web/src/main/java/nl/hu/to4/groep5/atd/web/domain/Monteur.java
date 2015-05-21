@@ -6,10 +6,6 @@ import java.io.Serializable;
  * Gemaakt door: Tristan en Roger
  */
 
-
-
-
-
 public class Monteur implements Serializable{
 
 	private int ID;

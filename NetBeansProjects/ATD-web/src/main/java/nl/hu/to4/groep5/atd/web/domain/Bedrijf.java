@@ -11,11 +11,13 @@ public class Bedrijf implements Serializable{
 
 	private String naam;
 	private ArrayList<Klant> alleKlanten = new ArrayList<Klant>();
+        private ArrayList<Medewerker> alleMedewerkers = new ArrayList<Medewerker>();
+	private ArrayList<Account> alleAccounts = new ArrayList<Account>();
 	private ArrayList<Factuur> alleFacturen = new ArrayList<Factuur>();
 	private ArrayList<Dienst> alleDiensten = new ArrayList<Dienst>();
 	private ParkeerPlaats deParkeerPlaats;
 	private ArrayList<Artikel> alleArtikelen = new ArrayList<Artikel>();
-	private ArrayList<Monteur> alleMonteurs = new ArrayList<Monteur>();
+        //private ArrayList<Monteur> alleMonteurs = new ArrayList<Monteur>();
 	private ArrayList<Auto> alleAutos = new ArrayList<Auto>();
 	
 	
@@ -44,9 +46,9 @@ public class Bedrijf implements Serializable{
             Artikel a10 = new Artikel("Benzine",300,100,1.99,at5);
             alleArtikelen.add(a1);alleArtikelen.add(a2);alleArtikelen.add(a3);alleArtikelen.add(a4);alleArtikelen.add(a5);alleArtikelen.add(a6);alleArtikelen.add(a7);alleArtikelen.add(a8);alleArtikelen.add(a9);alleArtikelen.add(a10);
 
-            Monteur m1 = new Monteur("Jurjen van Geenen", 1);
-            Monteur m2 = new Monteur("Helen Clason", 2);
-            alleMonteurs.add(m1);alleMonteurs.add(m2);
+            //Monteur m1 = new Monteur("Jurjen van Geenen", 1);
+            //Monteur m2 = new Monteur("Helen Clason", 2);
+            //alleMonteurs.add(m1);alleMonteurs.add(m2);
 
             //In klant toevoegPanel wordt ook de nieuwe auto aangemaakt
 	}
@@ -74,7 +76,53 @@ public class Bedrijf implements Serializable{
                 alleKlanten.remove(exKlant);
             }
 	}
+        
+        public void voegAccountToe(Account nwAccount) {
+            if (!heeftAccount(nwAccount.getNaam())) {
+                alleAccounts.add(nwAccount);
+                System.out.println("toegevoegd");
+            }
+	}
 	
+	public boolean heeftAccount(String aN) {
+            boolean b = false;
+            for (Account a : alleAccounts) {
+                if (a.getUsername().equals(aN)) {
+                    b = true;
+                }
+            }
+            return b;
+	}
+	
+	public void verwijderAccount(Account exAccount) {
+            if(heeftAccount(exAccount.getUsername())){
+                alleAccounts.remove(exAccount);
+            }
+	}
+	
+        public void voegMedewerkerToe(Medewerker nwMedewerker) {
+            if (!heeftMedewerker(nwMedewerker.getNaam())) {
+                alleMedewerkers.add(nwMedewerker);
+                System.out.println("toegevoegd");
+            }
+	}
+	
+	public boolean heeftMedewerker(String mN) {
+            boolean b = false;
+            for (Medewerker m : alleMedewerkers) {
+                if (m.getUsername().equals(mN)) {
+                    b = true;
+                }
+            }
+            return b;
+	}
+	
+	public void verwijderMedewerker(Medewerker exMedewerker) {
+            if(heeftMedewerker(exMedewerker.getUsername())){
+                alleMedewerkers.remove(exMedewerker);
+            }
+	}
+        
 	public void voegDienstToe(Dienst d) {
             alleDiensten.add(d);
 	}
@@ -90,6 +138,14 @@ public class Bedrijf implements Serializable{
 	public ArrayList<Klant> getAlleKlanten() {
             return alleKlanten;
 	}
+        
+	public ArrayList<Account> getAlleAccounts() {
+            return alleAccounts;
+	}
+        
+        public ArrayList<Medewerker> getAlleMedewerkers() {
+            return alleMedewerkers;
+	}
 	
 	public ArrayList<Artikel> getAlleArtikelen() {
             return alleArtikelen;
@@ -102,17 +158,25 @@ public class Bedrijf implements Serializable{
 	public ArrayList<Dienst> getAlleDiensten() {
             return alleDiensten;
 	}
-	
+	/*
 	public ArrayList<Monteur> getAlleMonteurs() {
             return alleMonteurs;
 	}
-	
+	*/
 	public ArrayList<Auto> getAlleAutos() {
             return alleAutos;
 	}
 	
         public void setAlleKlanten(ArrayList<Klant> k){
             alleKlanten = k;
+        }
+        
+        public void setAlleMedewerkers(ArrayList<Medewerker> m){
+            alleMedewerkers = m;
+        }
+        
+        public void setAlleAccounts(ArrayList<Account> a){
+            alleAccounts = a;
         }
         
         public void setAlleArtikelen(ArrayList<Artikel> k){
@@ -126,18 +190,16 @@ public class Bedrijf implements Serializable{
         public void setAlleDiensten(ArrayList<Dienst> k){
             alleDiensten = k;
         }
-        
+        /*
         public void setAlleMonteurs(ArrayList<Monteur> m){
             alleMonteurs = m;
         }
-        
+        */
         public void setAlleAutos(ArrayList<Auto> a){
             alleAutos = a;
         }      
         
-        
-        
-	public String toString() {
+        public String toString() {
 		String s = "Bedrijf " + naam + " heeft " +
 		aantalKlanten() + " klanten\n";
 		for (Klant k : alleKlanten) {
