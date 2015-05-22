@@ -41,14 +41,28 @@
     <div id="container">
         <div id="menu">
             <ul>
-                <li><div><a href="voorraadbeheer.jsp">Voorraad beheer</a></div></li>
+                <%
+                    if(request.getSession().getAttribute("ingelogdeUser") instanceof Medewerker){
+                        out.println("<li><div><a href='voorraadbeheer.jsp'>Voorraad beheer</a></div></li>");
+                        out.println("<li><div><a>Agenda</a></div></li>");
+                        out.println("<li><div><a>Facturen</a></div></li>");
+                        out.println("<li><div><a>Klanten</a></div></li>");
+                        out.println("<li><div><a>Parkeren</a></div></li>");
+                    }
+                    else{
+                        out.println("");
+                    }
+                %>
+                <!--<li><div><a href="voorraadbeheer.jsp">Voorraad beheer</a></div></li>
                 <li><div><a>Agenda</a></div></li>
                 <li><div><a>Facturen</a></div></li>
                 <li><div><a>Klanten</a></div></li>
-                <li><div><a>Parkeren</a></div></li>
+                <li><div><a>Parkeren</a></div></li>-->
+                
                 <%
                     if(request.getSession().getAttribute("ingelogdeUser") == null){
                         out.println("<li><div><a href='#' onclick='toggle_visibility(\"overlay\");'>Inloggen</a></div></li>");
+                        out.println("<li><div><a href='registratie.jsp'>Registreren</a></div></li>");
                     }
                     else{
                         out.println("<li><form action='LogoutServlet' method='POST'><input class='loginButton' type='submit' name='submit' value='Afmelden' /></form></li>");
