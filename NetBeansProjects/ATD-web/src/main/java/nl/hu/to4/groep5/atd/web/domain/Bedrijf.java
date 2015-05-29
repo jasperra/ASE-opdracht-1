@@ -116,6 +116,16 @@ public class Bedrijf implements Serializable{
             }
             return b;
 	}
+        
+        public boolean heeftMedewerkerId(int id) {
+            boolean b = false;
+            for (Medewerker m : alleMedewerkers) {
+                if (m.getID() == id) {
+                    b = true;
+                }
+            }
+            return b;
+	}
 	
 	public void verwijderMedewerker(Medewerker exMedewerker) {
             if(heeftMedewerker(exMedewerker.getUsername())){

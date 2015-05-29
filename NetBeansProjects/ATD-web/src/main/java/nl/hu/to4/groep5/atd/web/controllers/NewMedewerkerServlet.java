@@ -6,17 +6,19 @@ import javax.servlet.*;
 import javax.servlet.annotation.*;
 import javax.servlet.http.*;
 
-@WebServlet("/RegisterServlet")
-public class RegisterServlet extends HttpServlet {
+@WebServlet("/NewMedewerkerServlet")
+public class NewMedewerkerServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     
 
-    public RegisterServlet() { super(); }
+    public NewMedewerkerServlet() { super(); }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
     {
         boolean registerSucces = false;
         
+        String ID = request.getParameter("id");
+        int id = Integer.parseInt(ID);
         String name = request.getParameter("username");
         String realname = request.getParameter("rname");
         String pass = request.getParameter("password");
@@ -26,63 +28,54 @@ public class RegisterServlet extends HttpServlet {
         String telnr = request.getParameter("telnr");
         String postcode = request.getParameter("postcode");
         String plaats = request.getParameter("plaats");
-        String herinnering = request.getParameter("wiltHer");
-        Boolean wiltHer = false;
-        if(herinnering == null){
-            wiltHer = false;
-        }
-        else if(herinnering.equals("on")){
-            wiltHer = true;
-        }
+        String rol = request.getParameter("rol");
 
         Object hetBedrijf = getServletContext().getAttribute("hetBedrijf");
+        Bedrijf b = null;
         if(hetBedrijf != null){
-            Bedrijf b = (Bedrijf)hetBedrijf;
-            
-            if (!name.equals("") && !realname.equals("") && !pass.equals("") && !pass2.equals("") && !email.equals("")&& !email2.equals("")&& !telnr.equals("")&& !postcode.equals("")&& !plaats.equals(""))  {
+            b = (Bedrijf)hetBedrijf;
+
+            if (!name.equals("") && !realname.equals("") && !pass.equals("") && !pass2.equals("") && !email.equals("")&& !email2.equals("")&& !telnr.equals("")&& !postcode.equals("")&& !plaats.equals("") && !rol.equals(""))  {
                 if (email.equals(email2))
                 {
                     if ((pass.equals(pass2))) 
                     {
-                       if(!b.heeftMedewerker(name) && !b.heeftKlant(name)){
-                                registerSucces = true;
+                        if(!b.heeftMedewerker(name) && !b.heeftKlant(name)){
+                            if(id > 0 && !b.heeftMedewerkerId(id)){
+                               registerSucces = true;
                             } else {
-                               request.setAttribute("msgs", "Username is al in gebruik"); 
+                                request.setAttribute("msgs", "ID wordt al gebruikt"); 
                             }
-                    }
-                    else
-                    {
+                        } else {
+                           request.setAttribute("msgs", "Username is al in gebruik"); 
+                        }
+                    } else {
                        request.setAttribute("msgs", "Password information does not match"); 
                     }
-                }
-                else
-                {
+                } else {
                     request.setAttribute("msgs", "Email information does not match");
                 }
-            }
-            else
-            {
+            } else {
                 request.setAttribute("msgs", "Please fill in all information");
             }
+        }
         
-            RequestDispatcher rd = null;
-
-            if (registerSucces) {
-                System.out.println("Succes, Started Registering");
-
-                Klant k = new Klant(name,realname,pass,telnr,postcode,plaats,email,wiltHer);
-                b.voegKlantToe(k);
+        
+        
+        RequestDispatcher rd = null;
+        if (registerSucces) {
+            System.out.println("Succes, Started Registering");
+            
+            Medewerker m = new Medewerker(id,rol,name,realname,pass,telnr,postcode,plaats,email);
+            if(b != null){
+                b.voegMedewerkerToe(m);
                 getServletContext().setAttribute("hetBedrijf",b);
                 System.out.println("Done Registering");
-
-
-
-                rd = request.getRequestDispatcher("index.jsp");
             }
-            else {
-            rd = request.getRequestDispatcher("registratie.jsp");
-            }
-            rd.forward(request, response);
+            rd = request.getRequestDispatcher("index.jsp");
+        } else {
+            rd = request.getRequestDispatcher("newMedewerker.jsp");
         }
+        rd.forward(request, response);
     }
 }

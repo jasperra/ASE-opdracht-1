@@ -51,6 +51,7 @@ public class Onderhoudsbeurt extends Dienst implements Serializable{
 		return aantalBestedeUur;
 	}
 	
+        @Override
 	public boolean equalsDienst(Object andere){
 		boolean b = false;
 		if(andere instanceof Onderhoudsbeurt){
@@ -59,6 +60,7 @@ public class Onderhoudsbeurt extends Dienst implements Serializable{
 		return b;
 	}
 	
+        @Override
 	public String getNaam() {
 		return deMonteur.getNaam();
 	}
@@ -67,6 +69,7 @@ public class Onderhoudsbeurt extends Dienst implements Serializable{
 		deMonteur = m;
 	}
 
+        @Override
 	public Onderhoudsbeurt getOnderhoudsbeurt() {
 		return this;
 	}
