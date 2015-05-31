@@ -7,6 +7,7 @@ package nl.hu.to4.groep5.atd.web.listeners;
 
 import nl.hu.to4.groep5.atd.web.domain.*;
 import java.io.*;
+import java.util.logging.Logger;
 import javax.servlet.*;
 
 /**
@@ -14,6 +15,9 @@ import javax.servlet.*;
  * @author Roger
  */
 public class MyServletContextListener implements ServletContextListener {
+    private static final Logger LOG = Logger.getLogger(MyServletContextListener.class.getName());
+    
+    
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
@@ -22,6 +26,7 @@ public class MyServletContextListener implements ServletContextListener {
         
         try
         {
+            LOG.fine("Launching");
             System.out.println("-");
             System.out.println("-");
             System.out.println("LAUNCHING --------------------------- IN DE TRY");

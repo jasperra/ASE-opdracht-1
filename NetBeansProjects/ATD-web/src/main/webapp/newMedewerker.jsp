@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,12 +21,9 @@
         <div id = "account">
             <form action = "NewMedewerkerServlet" method = "post">
                 <div id = "messagebox">
-                    <%
-                        Object obj = request.getAttribute("msgs");
-                        if (obj != null) {
-                            out.println(obj);
-                        }
-                    %>
+                    <c:if test="${msgs != null}">
+                        ${msgs}
+                    </c:if>
                 </div>
                 <div id = "inputbox">
                     <h1>Medewerker Registreren</h1>

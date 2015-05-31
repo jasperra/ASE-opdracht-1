@@ -1,9 +1,4 @@
-<%-- 
-    Document   : registratie
-    Created on : 30-apr-2015, 13:25:25
-    Author     : Tristan
---%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -26,12 +21,9 @@
         <div id = "account">
             <form action = "RegisterServlet" method = "post">
                 <div id = "messagebox">
-                    <%
-                        Object obj = request.getAttribute("msgs");
-                        if (obj != null) {
-                            out.println(obj);
-                        }
-                    %>
+                    <c:if test="${msgs != null}">
+                        ${msgs}
+                    </c:if>
                 </div>
                 <div id = "inputbox">
                     <h1>Registreren</h1>

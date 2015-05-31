@@ -82,6 +82,9 @@ public class LoginServlet extends HttpServlet {
                 rd = request.getRequestDispatcher("index.jsp");
             }
         }
-        rd.forward(request, response);
+        if(rd != null && request != null && response != null){
+            System.out.println("geen nullpointers");
+            rd.forward(request, response);
+        }
     }
 }

@@ -4,10 +4,6 @@
 <jsp:include page="header.jsp"/>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-        <% 
-            Bedrijf b = (Bedrijf)getServletContext().getAttribute("hetBedrijf");
-            getServletContext().setAttribute("alleKlanten",b.getAlleKlanten());
-        %>
         <form action = "" method = "post">
             <table border=1 cellpadding=1>
                 <tr>
@@ -20,7 +16,7 @@
                   <th>Emailadres</th>
                 </tr>
                 
-                <c:forEach var="k" items="${alleKlanten}">                                            
+                <c:forEach var="k" items="${hetBedrijf.alleKlanten}">                                            
                     <tr>
                         <td>${k.username}</td>
                         <td>${k.naam}</td>

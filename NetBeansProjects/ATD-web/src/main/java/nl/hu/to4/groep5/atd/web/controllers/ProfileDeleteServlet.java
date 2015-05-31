@@ -41,7 +41,7 @@ public class ProfileDeleteServlet extends HttpServlet {
                 deleteSucces = true;
             } else{
                 
-                request.setAttribute("msgs", "Done");
+                request.setAttribute("deletemessage", "Done");
                 rd = request.getRequestDispatcher("profiel.jsp");
             }*/
         }
