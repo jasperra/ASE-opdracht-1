@@ -27,16 +27,13 @@
                     <li><div><a href="newMedewerker.jsp">Medewerker Registreren</a></div></li>
                     <li><div><a>Parkeren</a></div></li>
                 </c:if>
-                
                 <c:if test="${ingelogdeUser == null}">
                     <li><div><a href="#" onclick="toggle_visibility('overlay')">Inloggen</a></div></li>
                     <li><div><a href='registratie.jsp'>Registreren</a></div></li>
                 </c:if>
-                
                 <c:if test="${ingelogdeUser != null}">
                     <li><form action='LogoutServlet' method='POST'><input class='loginButton' type='submit' name='submit' value='Afmelden' /></form></li>
                 </c:if>
-                
             </ul>
         </div>
         <div id="overlay" class="overlay" style="display: none;">
