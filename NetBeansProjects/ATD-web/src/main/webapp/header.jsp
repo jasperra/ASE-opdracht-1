@@ -1,73 +1,41 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href ="css/Stylesheet.css" rel="stylesheet" type="text/css" />
         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        
         <link href='http://fonts.googleapis.com/css?family=Varela+Round|Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
-        <script type="text/javascript">
-            <!--
-                function popup(){
-                    cuteLittleWindow = window.open("aanpasSchermVoorraad.html", "littleWindow", "location=no,width=320,height=200"); 
-                }
-                
-                function toggle_visibility(id) {
-                    var e = document.getElementById(id);
-                    if(e.style.display == 'block')
-                        e.style.display = 'none';
-                    else
-                        e.style.display = 'block';
-                    }
-            //-->
-        </script>
+        <script src="javascript/script.js" ></script>
         <title>ATD web</title>
-        <%@page import="nl.hu.to4.groep5.atd.web.domain.*" %>
-        <%
-            Cookie cookies[] = request.getCookies();
-            Cookie myCookie = null;
-            if(cookies != null){
-                for(int i = 0; i < cookies.length; i++){
-                    if(cookies[i].getName().equals("user")){
-                        myCookie = cookies[i];
-                        break;
-                    }
-                }
-            }
-        %>
+       
+
     </head>
 <body>
     <a href="index.jsp"><div id="bannerContainer"></div></a>
     <div id="container">
         <div id="menu">
             <ul>
-                <%
-                    if(request.getSession().getAttribute("ingelogdeUser") instanceof Medewerker){
-                        out.println("<li><div><a href='voorraadbeheer.jsp'>Voorraad beheer</a></div></li>");
-                        out.println("<li><div><a>Agenda</a></div></li>");
-                        out.println("<li><div><a>Facturen</a></div></li>");
-                        out.println("<li><div><a>Klanten</a></div></li>");
-                        out.println("<li><div><a>Parkeren</a></div></li>");
-                    }
-                    else{
-                        out.println("");
-                    }
-                %>
-                <!--<li><div><a href="voorraadbeheer.jsp">Voorraad beheer</a></div></li>
-                <li><div><a>Agenda</a></div></li>
-                <li><div><a>Facturen</a></div></li>
-                <li><div><a>Klanten</a></div></li>
-                <li><div><a>Parkeren</a></div></li>-->
+                <c:if test="${ingelogdeUser.getClass().name == 'nl.hu.to4.groep5.atd.web.domain.Medewerker'}">
+                    <li><div><a href="voorraadbeheer.jsp">Voorraad beheer</a></div></li>
+                    <li><div><a>Agenda</a></div></li>
+                    <li><div><a>Facturen</a></div></li>
+                    <li><div><a href="klantenOverzicht.jsp">Klanten</a></div></li>
+                    <li><div><a href="medewerkerOverzicht.jsp">Medewerkers</a></div></li>
+                    <li><div><a href="newMedewerker.jsp">Medewerker Registreren</a></div></li>
+                    <li><div><a>Parkeren</a></div></li>
+                </c:if>
                 
-                <%
-                    if(request.getSession().getAttribute("ingelogdeUser") == null){
-                        out.println("<li><div><a href='#' onclick='toggle_visibility(\"overlay\");'>Inloggen</a></div></li>");
-                        out.println("<li><div><a href='registratie.jsp'>Registreren</a></div></li>");
-                    }
-                    else{
-                        out.println("<li><form action='LogoutServlet' method='POST'><input class='loginButton' type='submit' name='submit' value='Afmelden' /></form></li>");
-                    }
-                %>
+                <c:if test="${ingelogdeUser == null}">
+                    <li><div><a href="#" onclick="toggle_visibility('overlay')">Inloggen</a></div></li>
+                    <li><div><a href='registratie.jsp'>Registreren</a></div></li>
+                </c:if>
+                
+                <c:if test="${ingelogdeUser != null}">
+                    <li><form action='LogoutServlet' method='POST'><input class='loginButton' type='submit' name='submit' value='Afmelden' /></form></li>
+                </c:if>
                 
             </ul>
         </div>
@@ -78,12 +46,8 @@
                     <h3>Inloggen</h3>
                     <form action="LoginServlet" method="POST">
                         <label for="username">
-                        Gebruikersnaam: 
-                        <input id="username" class="login" type="text" name="username" placeholder="Gebruikersnaam" value="<% 
-                            if(myCookie != null){
-                                out.println(myCookie.getValue());
-                            }
-                        %>"  REQUIRED/>
+                        Gebruikersnaam:
+                        <input id="username" class="login" type="text" name="username" placeholder="Gebruikersnaam" value="<c:forEach items="${cookie}" var="currentCookie"><c:if test="${currentCookie.value.name == 'user'}" ><c:out value="${currentCookie.value.value}"/></c:if></c:forEach>"  REQUIRED/>
                         </label>
                         <label for="password">
                         Wachtwoord: 
