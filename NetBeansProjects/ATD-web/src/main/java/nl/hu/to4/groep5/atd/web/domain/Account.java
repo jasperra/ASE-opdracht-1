@@ -10,7 +10,7 @@ import java.io.*;
 /**
  * @author Tristan
  */
-public class Account implements Serializable{
+public abstract class Account implements Serializable{
     private String username, naam, wachtwoord, telefoonnummer, postcode, plaats, emailadres;
     
     public Account(String user,String nm, String ww, String tel, String pc, String pl, String email){
