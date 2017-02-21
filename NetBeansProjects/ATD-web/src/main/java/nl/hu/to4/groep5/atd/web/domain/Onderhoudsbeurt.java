@@ -17,7 +17,8 @@ public class Onderhoudsbeurt extends Dienst implements Serializable{
 	private Auto deAuto;
 	private Monteur deMonteur;
 	private ArrayList<GebruikteArtikelen> deArtikelen = new ArrayList<GebruikteArtikelen>();
-	
+	private final double pricePerHour = 50.0;
+
 	public Onderhoudsbeurt(int dN, String Dat, Auto dA, Monteur dM){
 		super(dN,Dat);
 		deAuto = dA;
@@ -26,13 +27,17 @@ public class Onderhoudsbeurt extends Dienst implements Serializable{
 	}
 	
 	public void berekenPrijs() {
-		double p = 0.0;
-		p = aantalBestedeUur * 50.0;
-		for(GebruikteArtikelen ga : deArtikelen){
-			p += ga.getHetArtikel().getPrijs() * ga.getAantal();
-		}
-		System.out.println("Roger is dik");
+		double p = aantalBestedeUur * pricePerHour;
+		p += getAantalBestedeUur();
 		super.setNettoPrijs(p);
+	}
+
+	private double getPriceOfAllArticles(){
+		double d = 0.0;
+		for(GebruikteArtikelen ga : deArtikelen){
+			d += ga.getHetArtikel().getPrijs() * ga.getAantal();
+		}
+		return d;
 	}
 	
 	public void voegArtikelToe(Artikel a, int n){

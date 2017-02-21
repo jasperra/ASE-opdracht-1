@@ -9,9 +9,9 @@ import java.io.Serializable;
 public class Klant extends Account implements Serializable{
     private boolean WiltHerinnering;
 
-    public Klant(String user,String nm, String ww, String tel, String pc, String pl, String email, boolean wh){
-        super(user,nm,ww,tel,pc,pl,email);
-        WiltHerinnering = wh;
+    public Klant(String user,String naam, String wachtwoord, String telefoonnummer, String postcode, String plaats, String email, boolean wiltHerinneringsBrieven){
+        super(user,naam,wachtwoord,telefoonnummer,postcode,plaats,email);
+        WiltHerinnering = wiltHerinneringsBrieven;
     }
 
     /**

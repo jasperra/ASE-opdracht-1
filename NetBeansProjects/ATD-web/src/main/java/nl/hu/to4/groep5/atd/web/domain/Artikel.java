@@ -13,7 +13,7 @@ import java.io.Serializable;
 public class Artikel implements Serializable{
 
 	private String code;
-	private ArtikelType hetType;
+	private ArtikelType artikelType;
 	private int aantal,minimum;
 	private double prijs;
 
@@ -22,20 +22,20 @@ public class Artikel implements Serializable{
 		minimum = min;
 		aantal = a;
 		prijs = pr;
-		hetType = at;
+		artikelType = at;
 	}
 	public void setAantal(int al){
 		aantal = al;
 	}
 	public String getCode(){ return code; }
-	public String getType(){ return hetType.getType(); }
+	public String getType(){ return artikelType.getType(); }
 	public int getAantal() { return aantal;}
 	public int getMinimum() { return minimum; }
 	public double getPrijs() { return prijs; }
 	
 	public String toString(){
 		//Hier wordt gekeken of er wel of niet besteld moet worden. Dan wordt dit in een String gezet, deze String wordt vervolgens gereturned.
-		String s = "Van type: " + hetType.getType() + ", ";
+		String s = "Van type: " + artikelType.getType() + ", ";
 		int a = minimum - aantal;
 		if(a > 0){
 			s += "moeten er " + a + " besteld worden";

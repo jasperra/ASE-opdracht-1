@@ -14,12 +14,12 @@ import java.io.Serializable;
 public class Auto implements Serializable{
 	private String naam;
 	private String merk;
-	private Klant deEigenaar;
+	private Klant klant;
 	
 	public Auto(String nm, String mk, Klant dE){
 		naam = nm;
 		merk = mk;
-		deEigenaar = dE;
+		klant = dE;
 	}
 	
 	public String getNaam(){
@@ -29,9 +29,9 @@ public class Auto implements Serializable{
 		return merk;
 	}
 	public Klant getKlant(){
-		return deEigenaar;
+		return klant;
 	}
 	public String getDeEigenaarsNaam(){
-		return deEigenaar.getNaam();
+		return klant.getNaam();
 	}
 }
