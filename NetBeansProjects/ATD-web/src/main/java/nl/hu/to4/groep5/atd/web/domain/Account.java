@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package nl.hu.to4.groep5.atd.web.domain;
+package hu.to4.groep5.atd.web.domain;
 
 import java.io.*;
 

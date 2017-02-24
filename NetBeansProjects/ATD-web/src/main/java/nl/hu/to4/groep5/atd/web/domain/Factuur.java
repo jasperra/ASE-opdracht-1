@@ -1,4 +1,4 @@
-package nl.hu.to4.groep5.atd.web.domain;
+package hu.to4.groep5.atd.web.domain;
 
 /*
  * Gemaakt door: Tristan en Roger
@@ -10,8 +10,11 @@ package nl.hu.to4.groep5.atd.web.domain;
 
 
 import java.io.Serializable;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 public class Factuur implements Serializable{
 	
@@ -21,23 +24,27 @@ public class Factuur implements Serializable{
 	private String omschrijving, factuurDatum, vervalDatum;
 	private Klant betalendeKlant;
 
-	public Factuur(int fN, String fD,String vD, String oS, Klant k){
-		factuurNummer = fN;
-		setFactuurDatum(fD);
-		setVervalDatum(vD);
-		setOmschrijving(oS);
+	public Factuur(ParameterObject parameterObject){
+		factuurNummer = parameterObject.getfN();
+		setFactuurDatum(parameterObject.getfD());
+		setVervalDatum(parameterObject.getvD());
+		setOmschrijving(parameterObject.getoS());
 		isBetaald = false;
-		betalendeKlant = k;
+		betalendeKlant = parameterObject.getK();
 	}
 	
-	public boolean checkFactuur(String vD) {
-		LocalDate currentDate = LocalDate.now();
-		
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-		LocalDate vervalDate = LocalDate.parse(vD, formatter);
-		
+	public static boolean checkFactuur(String vD) {
+		Date currentDate = Calendar.getInstance().getTime();
+
+		DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+		Date vervalDate = null;
+		try {
+			vervalDate = df.parse(vD);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+
 		if(currentDate.compareTo(vervalDate) > 0){
-			//Te laat
 			return true;
 		}
 		return false;
@@ -106,3 +113,4 @@ public class Factuur implements Serializable{
 		brutoPrijs = bP;
 	}
 }
+

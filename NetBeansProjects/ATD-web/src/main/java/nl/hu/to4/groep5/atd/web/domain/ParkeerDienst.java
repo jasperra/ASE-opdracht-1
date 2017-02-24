@@ -1,4 +1,4 @@
-package nl.hu.to4.groep5.atd.web.domain;
+package hu.to4.groep5.atd.web.domain;
 
 import java.io.Serializable;
 
@@ -22,11 +22,13 @@ public class ParkeerDienst extends Dienst implements Serializable{
 	public void setAantalUur(int aU){
 		 aantalUur = aU;
 	}
+
 	public void berekenPrijs(){
 		double p = 0.0;
-		p = aantalUur * 5.0;	
+		p = new Calculations().invoke();
 		super.setNettoPrijs(p);
 	}
+
 	public boolean equalsDienst(Object andere){
 		boolean b = false;
 		if(andere instanceof ParkeerDienst){
@@ -41,7 +43,17 @@ public class ParkeerDienst extends Dienst implements Serializable{
 	public Onderhoudsbeurt getOnderhoudsbeurt() {
 		return null;
 	}
+
 	public int getAantalUur() {
 		return aantalUur;
+	}
+
+	private class Calculations {
+
+		public static final double costPerHour = 5.0;
+
+		public double invoke() {
+			return aantalUur * costPerHour;
+		}
 	}
 }

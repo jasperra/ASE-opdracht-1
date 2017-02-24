@@ -1,4 +1,4 @@
-package nl.hu.to4.groep5.atd.web.domain;
+package hu.to4.groep5.atd.web.domain;
 
 import java.io.Serializable;
 

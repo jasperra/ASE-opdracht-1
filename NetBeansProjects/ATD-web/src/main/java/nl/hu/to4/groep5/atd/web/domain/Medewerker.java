@@ -1,4 +1,4 @@
-package nl.hu.to4.groep5.atd.web.domain;
+package hu.to4.groep5.atd.web.domain;
 
 import java.io.Serializable;
 
@@ -6,12 +6,13 @@ import java.io.Serializable;
  * Gemaakt door: Tristan
  */
 
-public class Medewerker extends Account implements Serializable{
+public class Medewerker implements Serializable{
+    private final MyAccount account;
     private int ID;
     private String rol;
 
     public Medewerker(int iD,String r,String user,String nm, String ww, String tel, String pc, String pl, String email){
-        super(user,nm,ww,tel,pc,pl,email);
+        account = new MyAccount(user,nm,ww,tel,pc,pl,email);
         ID = iD;
         rol = r;
     }
@@ -42,5 +43,19 @@ public class Medewerker extends Account implements Serializable{
      */
     public void setRol(String rol) {
         this.rol = rol;
+    }
+
+    public String getNaam(){
+        return account.getNaam();
+    }
+
+    public String getUsername(){
+        return account.getUsername();
+    }
+
+    private class MyAccount extends Account {
+        public MyAccount(String user, String nm, String ww, String tel, String pc, String pl, String email) {
+            super(user, nm, ww, tel, pc, pl, email);
+        }
     }
 }

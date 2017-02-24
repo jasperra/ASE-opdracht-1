@@ -1,4 +1,4 @@
-package nl.hu.to4.groep5.atd.web.domain;
+package hu.to4.groep5.atd.web.domain;
 
 /*
  * Gemaakt door: Tristan en Roger
@@ -34,17 +34,16 @@ public class Bedrijf implements Serializable{
             ArtikelType at4 = new ArtikelType("Auto-onderdelen");
             ArtikelType at5 = new ArtikelType("Brandstof");
 
-            Artikel a1 = new Artikel("Moer 1",200,100,1.50,at1);
-            Artikel a2 = new Artikel("Moer 2",200,100,1.28,at1);
-            Artikel a3 = new Artikel("Schroef 1",200,100,1.78,at2);
-            Artikel a4 = new Artikel("Schroef 2",200,100,2.96,at2);
-            Artikel a5 = new Artikel("Deur 1",6,100,1.50,at3);
-            Artikel a6 = new Artikel("Deur 2",3,100,1.28,at3);
-            Artikel a7 = new Artikel("Auto-onderdeel 1",40,100,14.59,at4);
-            Artikel a8 = new Artikel("Auto-onderdeel 2",60,100,41.67,at4);
-            Artikel a9 = new Artikel("Diesel",300,100,2.50,at5);
-            Artikel a10 = new Artikel("Benzine",300,100,1.99,at5);
-            alleArtikelen.add(a1);alleArtikelen.add(a2);alleArtikelen.add(a3);alleArtikelen.add(a4);alleArtikelen.add(a5);alleArtikelen.add(a6);alleArtikelen.add(a7);alleArtikelen.add(a8);alleArtikelen.add(a9);alleArtikelen.add(a10);
+        addNewArtikel("Moer 1",200,100,1.50,at1);
+        addNewArtikel("Moer 2",200,100,1.28,at1);
+        addNewArtikel("Schroef 1",200,100,1.78,at2);
+        addNewArtikel("Schroef 2",200,100,2.96,at2);
+        addNewArtikel("Deur 1",6,100,1.50,at3);
+        addNewArtikel("Deur 2",3,100,1.28,at3);
+        addNewArtikel("Auto-onderdeel 1",40,100,14.59,at4);
+        addNewArtikel("Auto-onderdeel 2",60,100,41.67,at4);
+        addNewArtikel("Diesel",300,100,2.50,at5);
+        addNewArtikel("Benzine",300,100,1.99,at5);
 
             //Monteur m1 = new Monteur("Jurjen van Geenen", 1);
             //Monteur m2 = new Monteur("Helen Clason", 2);
@@ -52,7 +51,10 @@ public class Bedrijf implements Serializable{
 
             //In klant toevoegPanel wordt ook de nieuwe auto aangemaakt
 	}
-	
+
+	private void addNewArtikel(String name, int amount, int maxAmount, double price, ArtikelType artikelType){
+	    alleArtikelen.add(new Artikel(name, amount, maxAmount, price, artikelType));
+    }
 
 	public void voegKlantToe(Klant nweKlant) {
             if (!heeftKlant(nweKlant.getNaam())) {

@@ -21,9 +21,9 @@ public class LoginServlet extends HttpServlet {
         String rememberMe = request.getParameter("remember me");
 
         RequestDispatcher requestDispatcher;
-        Bedrijf bedrijf = getBedrijfFromServletContext();
+        Bedrijf bedrijf = (Bedrijf) getServletContext().getAttribute("hetBedrijf");
         Account user = bedrijf.getAccountByName(username);
-        if(logUserIn(username, password, bedrijf)){
+        if(logUserIn(username, password, user)){
             setCookie(rememberMe, user, response);
             request.getSession().setAttribute("ingelogdeUser", user);
             requestDispatcher = request.getRequestDispatcher("profiel.jsp");
@@ -37,16 +37,11 @@ public class LoginServlet extends HttpServlet {
         }
     }
 
-    private boolean logUserIn(String username, String password, Bedrijf bedrijf){
-        Account user = bedrijf.getAccountByName(username);
-        if(user.login(password)){
+    private boolean logUserIn(String username, String password, Account account){
+        if(account.login(password)){
             return true;
         }
         return false;
-    }
-
-    private Bedrijf getBedrijfFromServletContext(){
-        return (Bedrijf) getServletContext().getAttribute("hetBedrijf");
     }
 
     private void setCookie(String rememberMe, Account account, HttpServletResponse response){

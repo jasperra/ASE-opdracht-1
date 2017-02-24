@@ -1,4 +1,4 @@
-package nl.hu.to4.groep5.atd.web.domain;
+package hu.to4.groep5.atd.web.domain;
 
 import java.io.Serializable;
 
@@ -8,6 +8,7 @@ import java.io.Serializable;
 public class ParkeerPlaats implements Serializable{
     private int maxAantal = 25;
     private int aantalBezet = 0;
+    private ParkeerPlek parkeerPlek = ParkeerPlek.createParkeerPlek(this);
      
     public ParkeerPlaats(){
          
@@ -53,7 +54,9 @@ public class ParkeerPlaats implements Serializable{
         int i = maxAantal - aantalBezet;
         return i;
     }
-    
-  
-     
+
+
+    public ParkeerPlek getImplValue() {
+        return parkeerPlek;
+    }
 }
