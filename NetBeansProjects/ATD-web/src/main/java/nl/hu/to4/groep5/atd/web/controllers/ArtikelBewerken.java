@@ -43,6 +43,7 @@ public class ArtikelBewerken extends HttpServlet {
                 if(art!=null) {
                     art.setAantal(nieuw);
                 }
+                System.out.println("hoi extra test");
                 rd = request.getRequestDispatcher("voorraadbeheer.jsp");
             } else {
                 msg = "Er kan geen negatieve voorraad bestaan!";
