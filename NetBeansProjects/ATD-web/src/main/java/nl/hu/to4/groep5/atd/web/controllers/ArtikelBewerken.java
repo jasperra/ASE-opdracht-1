@@ -25,7 +25,7 @@ public class ArtikelBewerken extends HttpServlet {
         ArrayList<Artikel> alleArtikelen = b.getAlleArtikelen();
         
         String msg = null;
-        Artikel art = null;
+        Artikel art = new Artikel();
         RequestDispatcher rd = null;
         
         for(Artikel a: alleArtikelen){
