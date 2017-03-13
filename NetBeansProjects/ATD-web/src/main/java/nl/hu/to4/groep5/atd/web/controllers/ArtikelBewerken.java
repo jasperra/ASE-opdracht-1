@@ -40,9 +40,10 @@ public class ArtikelBewerken extends HttpServlet {
         if(isInteger(aantal)){
             int nieuw = Integer.parseInt(aantal);
             if(nieuw >= 0){
-                
-                art.setAantal(nieuw);
-                
+                if(art!=null) {
+                    art.setAantal(nieuw);
+                }
+                System.out.println("hoi extra test");
                 rd = request.getRequestDispatcher("voorraadbeheer.jsp");
             } else {
                 msg = "Er kan geen negatieve voorraad bestaan!";
